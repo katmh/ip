@@ -1,0 +1,185 @@
+[meta title:"IP Addresses" description:"Short description of your project" /]
+
+[Header
+  fullWidth:true
+  title:"IP Addresses"
+  subtitle:"What is an IP address? How have they been allocated? What do we do since we're running out?"
+  author:"Kat Huang"
+  authorLink:"https://katmh.com"
+  date:`(new Date()).toDateString()`
+  background:"#222222"
+  color:"#ffffff"
+   /]
+
+## What is an IP address?
+
+An IP address is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.
+
+You may have seen an IP address before, notably IPv4, i.e. it follows the fourth version of the Internet protocol, deployed in 1983. This kind of IP address includes 4 numbers separated by dots. Each number actually represents 8 bits, or binary digits: 0s and 1s. The numbers tell us the network and host.
+
+Note that we’re talking about a device’s address on the global internet. Not every device has a global internet IP—for example, we at home have 1 public IP address that the internet sees us as, which is the one assigned by the ISP to our router. This is NAT: putting many devices behind one public IP.
+
+Localhost is a host name that your computer understands to mean its own IP address (127.0.0.1). Your computer has what’s called a loopback network device that tells it that 127.0.0.1 == itself.
+
+Each of the four numbers in an IP address ranges from 1 (0000 0000 in binary) to 256 (1111 1111 in binary.) In practice, certain ranges of numbers are reserved.
+
+Calculating in theory, we have at maximum 2^32 = 4,294,967,296, over 4 billion IP addresses. However, there are over 4.66 billion people in the world who use the Internet, and many individuals and organizations have multiple devices per person.
+
+In fact, we're out of IP addresses. Who owns them and how did we get here? What's next?
+
+## How have IP addresses been allocated?
+
+Various classes; reserved addresses
+
+/8 (16 mil) IP address blocks were the largest given out. FYI /8 (16 mil) IP address blocks were the largest given out. https://www.networkworld.com/article/3191503/mit-selling-8-million-coveted-ipv4-addresses-amazon-a-buyer.html
+
+https://bgp.he.net/AS14907 AS/ASN (identifier of organization that owns that particular IP / IP block, registered with American Reigstry of Internet Numbers), peers
+
+http://web.mit.edu/6.02/www/s2012/handouts/youtube-pt.pdf
+
+
+[var name:"state" value:0 /]
+
+[Scroller currentStep:state]
+
+  [Graphic className:"d3-component-container"]
+    [CustomD3Component className:"d3-component" state:`state+1` /]
+  [/Graphic]
+
+  [Step]
+
+    ## Markup
+
+    Idyll is based on Markdown.
+
+    You can use familiar syntax
+    to create **bold** (`**bold**` ) and *italic* (`*italic*` ) styles,
+
+* lists
+* of
+* items,
+
+    ```
+    * lists
+    * of
+    * items,
+    ```
+
+1. and numbered
+2. lists
+3. of items,
+
+
+    ```
+    1. and numbered
+    2. lists
+    3. of items,
+    ```
+
+    in addition to [hyperlinks](https://idyll-lang.org) and images:
+
+    ![quill](static/images/quill.svg)
+
+    ```
+    ![quill](static/images/quill.svg)
+    ```
+  [/Step]
+
+  [Step]
+    ## Components
+
+    Components can be embedded using a bracket syntax:
+
+    ```
+    [Range /]
+    ```
+
+    and can contain nested content:
+
+    ```
+    [Equation]e = mc^{2}[/Equation]
+    ```
+
+    Components accept properties:
+
+    ```
+    [Range value:x min:0 max:1 /]
+    ```
+
+    that can be bound to variables to achieve interactivity (more in next section).
+
+
+    A variety of components are included by default. See [all the available components](https://idyll-lang.org/docs/components/). You can also use any html tag, for example: `[div] A div! [/div]`.
+
+    To create your own, add it to the `components/` folder. There are examples of how to use Idyll with React and D3 based components already included.
+
+  [/Step]
+
+  [Step]
+    ## Interactivity
+
+    Here is how you can instantiate a variable and bind it to a component:
+
+    [var name:"exampleVar" value:5 /]
+
+    [Range min:0 max:10 value:exampleVar /]
+    [Display value:exampleVar /]
+
+    ```
+    [var name:"exampleVar" value:5 /]
+
+    [Range min:0 max:10 value:exampleVar /]
+    [Display value:exampleVar /]
+    ```
+  [/Step]
+
+[/Scroller]
+
+[Scroller]
+
+  [Step]
+
+    ##Scroller
+
+    The `Scroller` component is used to create scroll-based presentations. It can be used to create scrollytelling articles similar to this.
+    It takes a property `currentStep` which is updated when the user scrolls to a different step.
+
+    A persistent graphic may also provided using the `Graphic` component in order to create visualizations.
+
+  [/Step]
+
+  [Step]
+
+    ## Learn More
+
+    To learn more see the documentation at [https://idyll-lang.org/docs/](https://idyll-lang.org/docs/),
+    join our [chatroom](https://gitter.im/idyll-lang/Lobby), or see the project on [GitHub](https://github.com/idyll-lang/idyll).
+  [hr /]
+
+  [/Step]
+
+[/Scroller]
+
+[br/]
+# Technical Details
+
+## Installation
+
+- Make sure you have `idyll` installed (`npm i -g idyll`).
+- Clone this repo and run `npm install`.
+
+## Developing a post locally
+
+Run `idyll`.
+
+## Building a post for production
+
+Run `idyll build`. The output will appear in the top-level `build` folder. To change the output location, change the `output` option in `package.json`.
+
+## Deploying
+
+Make sure your post has been built, then deploy the docs folder via any static hosting service.
+
+## Dependencies
+
+You can install custom dependencies by running `npm install <package-name> --save`. Note that any collaborators will also need download the package locally by running `npm install` after pulling the changes.

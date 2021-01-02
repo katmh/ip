@@ -15,7 +15,13 @@
 
 An IP address is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.
 
+It identifies the host, or more specifically its network interface, and it provides the location of the host in the network, and thus the capability of establishing a path to that host.
+
 You may have seen an IP address before, notably IPv4, i.e. it follows the fourth version of the Internet protocol, deployed in 1983. This kind of IP address includes 4 numbers separated by dots. Each number actually represents 8 bits, or binary digits: 0s and 1s. The numbers tell us the network and host.
+
+[FullWidth]
+  [Address numbers:`[192,168,0,0]` /]
+[/FullWidth]
 
 Note that we’re talking about a device’s address on the global internet. Not every device has a global internet IP—for example, we at home have 1 public IP address that the internet sees us as, which is the one assigned by the ISP to our router. This is NAT: putting many devices behind one public IP.
 
@@ -27,9 +33,22 @@ Calculating in theory, we have at maximum 2^32 = 4,294,967,296, over 4 billion I
 
 In fact, we're out of IP addresses. Who owns them and how did we get here? What's next?
 
+Private aka unroutable: 192.168.*, 10.*. No entries in routing table for these addresses, so if your destination is one of these, the router will drop the packet.
+
 ## How have IP addresses been allocated?
 
-Various classes; reserved addresses
+The IP address space is managed globally by the Internet Assigned Numbers Authority (IANA), and by five regional Internet registries (RIRs) responsible in their designated territories for assignment to local Internet registries, such as Internet service providers (ISPs), and other end users.
+
+IPv4 addresses were distributed by IANA to the RIRs in blocks of approximately 16.8 million addresses each, but have been exhausted at the IANA level since January 2011. The main market forces that accelerated IPv4 address depletion included the rapidly growing number of Internet users, always-on devices, and mobile devices.
+
+The anticipated shortage has been the driving factor in creating and adopting several new technologies, including network address translation (NAT), Classless Inter-Domain Routing (CIDR) in 1993, and IPv6 in 1998.
+
+Original, classful system: Various classes; reserved addresses; Class A, B, C (different bit lengths, check by bits in first octet); unused IPs within blocks
+
+1993 CIDR (Classless Inter-Domain Routing) lets us repartition to make smaller or larger blocks, subnet
+
+Originally all allocated to IANA. Later, parts of the address space were allocated to other registries.
+
 
 /8 (16 mil) IP address blocks were the largest given out. FYI /8 (16 mil) IP address blocks were the largest given out. https://www.networkworld.com/article/3191503/mit-selling-8-million-coveted-ipv4-addresses-amazon-a-buyer.html
 

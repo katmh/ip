@@ -35,3 +35,31 @@
     margin-left: 65vw;
   }
 }
+
+.address_container {
+  color: red;
+  font-family: monospace;
+  text-align: center;
+}
+
+.address span:after {
+  content: ".";
+}
+.address span:last-of-type:after {
+  content: "";
+}
+
+.binary_address {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+}
+
+.binary_address .number_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.binary_switch {
+  margin: 0;
+}

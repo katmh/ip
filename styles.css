@@ -86,3 +86,7 @@
   text-transform: uppercase;
   color: #333;
 }
+
+.subnet {
+  stroke: white;
+}

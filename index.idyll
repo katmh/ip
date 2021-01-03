@@ -76,7 +76,7 @@ The numbers tell us the network and host. Original, classful system: Various cla
 The anticipated shortage has been the driving factor in creating and adopting several new technologies, including network address translation (NAT), Classless Inter-Domain Routing (CIDR) in 1993, and IPv6 in 1998. 1993 CIDR (Classless Inter-Domain Routing) lets us repartition to make smaller or larger blocks, subnet. Since a "classful" system didn't work, they came up with Classless Inter-Domain Routing (CIDR, pronounced cider) in 1993. Breaks IPs up into "blocks"
 
 [FullWidth]
-  [Scrabble leading:`[]` networkSize:`8` /]
+  [CIDRExplorer /]
 [/FullWidth]
 
 [AddressWithBinary numbers:`[127,0,0,0]` /]
@@ -85,12 +85,20 @@ Subnet, netmask
 
 /8 (16 mil) IP address blocks were the largest given out. FYI /8 (16 mil) IP address blocks were the largest given out. https://www.networkworld.com/article/3191503/mit-selling-8-million-coveted-ipv4-addresses-amazon-a-buyer.html
 
-https://bgp.he.net/AS14907 AS/ASN (identifier of organization that owns that particular IP / IP block, registered with American Reigstry of Internet Numbers), peers
+[FullWidth]
+  ![Map](/static/images/whois-20071001.png)
+[/FullWidth]
 
-http://web.mit.edu/6.02/www/s2012/handouts/youtube-pt.pdf
+[FullWidth]
+  [SubnetBar /]
+[/FullWidth]
 
 ## Case Study: MIT
 
 ## What do we do since we're running out?
 
 CIDR has worked well, but we have IPv6
+
+Visualize how big the new IPv6 space is
+
+And now we wait!

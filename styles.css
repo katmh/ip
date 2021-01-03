@@ -42,10 +42,12 @@
   text-align: center;
 }
 
-.address span:after {
+.address span:after,
+.big_address span:after {
   content: ".";
 }
-.address span:last-of-type:after {
+.address span:last-of-type:after,
+.big_address span:last-of-type:after {
   content: "";
 }
 
@@ -62,4 +64,44 @@
 
 .binary_switch {
   margin: 0;
+}
+
+.big_address {
+  font-family: monospace;
+  font-size: 2rem;
+}
+
+.network {
+  color: maroon;
+}
+
+.host {
+  color: navy;
+}
+
+.scrabble {
+  display: block; /* so it's only as wide as needed */
+}
+
+.scrabble_block_set_container {
+  display: inline-block;
+}
+
+.scrabble_block {
+  display: inline-block;
+  height: 25px;
+  width: 15px;
+  margin: 0 2.5px;
+}
+
+.bit {
+  position: absolute;
+}
+
+.scrabble_label {
+  text-align: center;
+  margin-bottom: -1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #333;
 }

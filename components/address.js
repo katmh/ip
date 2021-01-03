@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+// use array to store bits to make it easier to access by index
 const dec2binArray = (dec) => {
   const converted = (dec >>> 0).toString(2);
   // add extra 0s to front if shorter than 8 bits
@@ -14,7 +15,7 @@ const Address = ({ hasError, idyll, updateProps, numbers, ...props }) => {
   const initialBinNumbers = numbers.map((n) => dec2binArray(n));
   const [binNumbers, setBinNumbers] = useState(initialBinNumbers);
 
-  const handleChange = (binIdx, checkIdx, e) => {
+  const handleChange = (binIdx, checkIdx) => {
     const bn = binNumbers.slice();
     bn[binIdx][checkIdx] = (1 - bn[binIdx][checkIdx]).toString();
     setBinNumbers(bn);
@@ -49,7 +50,7 @@ const Address = ({ hasError, idyll, updateProps, numbers, ...props }) => {
                     defaultChecked={
                       binNumbers[binIdx][checkIdx].toString().charAt() == 1
                     }
-                    onChange={(e) => handleChange(binIdx, checkIdx, e)}
+                    onChange={() => handleChange(binIdx, checkIdx)}
                   />
                 ))}
               </div>

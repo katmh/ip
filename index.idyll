@@ -17,13 +17,13 @@ An IP address is a numerical label assigned to each device connected to a comput
 
 It identifies the host, or more specifically its network interface, and it provides the location of the host in the network, and thus the capability of establishing a path to that host.
 
-You may have seen an IP address before, notably IPv4, i.e. it follows the fourth version of the Internet protocol, deployed in 1983. This kind of IP address includes 4 numbers separated by dots. Each number actually represents 8 bits, or binary digits: 0s and 1s. The numbers tell us the network and host.
+You may have seen an IP address before, notably IPv4, i.e. it follows the fourth version of the Internet protocol, deployed in 1983. This kind of IP address includes 4 numbers separated by dots. Each number actually represents 8 bits, or binary digits: 0s and 1s.
 
-[FullWidth]
-  [Address numbers:`[192,168,0,0]` /]
-[/FullWidth]
+[Address numbers:`[192,168,0,0]` /]
 
-Note that we’re talking about a device’s address on the global internet. Not every device has a global internet IP—for example, we at home have 1 public IP address that the internet sees us as, which is the one assigned by the ISP to our router. This is NAT: putting many devices behind one public IP.
+[Aside]
+  192.168.0.0 is a private IP address. Not every device has a global internet IP. For example, at home we have 1 public IP address that the internet sees us as, which is the one assigned by the ISP to our router. This is NAT: putting many devices behind one public IP.
+[/Aside]
 
 Localhost is a host name that your computer understands to mean its own IP address (127.0.0.1). Your computer has what’s called a loopback network device that tells it that 127.0.0.1 == itself.
 
@@ -39,16 +39,13 @@ Private aka unroutable: 192.168.*, 10.*. No entries in routing table for these a
 
 The IP address space is managed globally by the Internet Assigned Numbers Authority (IANA), and by five regional Internet registries (RIRs) responsible in their designated territories for assignment to local Internet registries, such as Internet service providers (ISPs), and other end users.
 
-IPv4 addresses were distributed by IANA to the RIRs in blocks of approximately 16.8 million addresses each, but have been exhausted at the IANA level since January 2011. The main market forces that accelerated IPv4 address depletion included the rapidly growing number of Internet users, always-on devices, and mobile devices.
+Originally all allocated to IANA. Later, parts of the address space were allocated to other registries. IPv4 addresses were distributed by IANA to the RIRs in blocks of approximately 16.8 million addresses each, but have been exhausted at the IANA level since January 2011. The main market forces that accelerated IPv4 address depletion included the rapidly growing number of Internet users, always-on devices, and mobile devices.
 
-The anticipated shortage has been the driving factor in creating and adopting several new technologies, including network address translation (NAT), Classless Inter-Domain Routing (CIDR) in 1993, and IPv6 in 1998.
+The numbers tell us the network and host. Original, classful system: Various classes; reserved addresses; Class A, B, C (different bit lengths, check by bits in first octet); unused IPs within blocks
 
-Original, classful system: Various classes; reserved addresses; Class A, B, C (different bit lengths, check by bits in first octet); unused IPs within blocks
+The anticipated shortage has been the driving factor in creating and adopting several new technologies, including network address translation (NAT), Classless Inter-Domain Routing (CIDR) in 1993, and IPv6 in 1998. 1993 CIDR (Classless Inter-Domain Routing) lets us repartition to make smaller or larger blocks, subnet. Since a "classful" system didn't work, they came up with Classless Inter-Domain Routing (CIDR, pronounced cider) in 1993. Breaks IPs up into "blocks"
 
-1993 CIDR (Classless Inter-Domain Routing) lets us repartition to make smaller or larger blocks, subnet
-
-Originally all allocated to IANA. Later, parts of the address space were allocated to other registries.
-
+Subnet, netmask
 
 /8 (16 mil) IP address blocks were the largest given out. FYI /8 (16 mil) IP address blocks were the largest given out. https://www.networkworld.com/article/3191503/mit-selling-8-million-coveted-ipv4-addresses-amazon-a-buyer.html
 
@@ -56,82 +53,27 @@ https://bgp.he.net/AS14907 AS/ASN (identifier of organization that owns that par
 
 http://web.mit.edu/6.02/www/s2012/handouts/youtube-pt.pdf
 
-
 [var name:"state" value:0 /]
+[var name:"leading" value:`[[0],[1,0],[1,1,0]]` /]
+[var name:"networkSizes" value:`[7,14,21]` /]
 
 [Scroller currentStep:state]
 
-  [Graphic className:"d3-component-container"]
-    [CustomD3Component className:"d3-component" state:`state+1` /]
+  [Graphic]
+    [Scrabble leading:`leading[state]` networkSize:`networkSizes[state]` /]
   [/Graphic]
 
   [Step]
-
-    ## Markup
-
     Idyll is based on Markdown.
 
     You can use familiar syntax
     to create **bold** (`**bold**` ) and *italic* (`*italic*` ) styles,
-
-* lists
-* of
-* items,
-
-    ```
-    * lists
-    * of
-    * items,
-    ```
-
-1. and numbered
-2. lists
-3. of items,
-
-
-    ```
-    1. and numbered
-    2. lists
-    3. of items,
-    ```
-
-    in addition to [hyperlinks](https://idyll-lang.org) and images:
-
-    ![quill](static/images/quill.svg)
-
-    ```
-    ![quill](static/images/quill.svg)
-    ```
   [/Step]
 
   [Step]
-    ## Components
-
-    Components can be embedded using a bracket syntax:
-
-    ```
-    [Range /]
-    ```
-
-    and can contain nested content:
-
-    ```
-    [Equation]e = mc^{2}[/Equation]
-    ```
-
-    Components accept properties:
-
-    ```
-    [Range value:x min:0 max:1 /]
-    ```
-
-    that can be bound to variables to achieve interactivity (more in next section).
-
+    Components can be embedded using a bracket syntax and can contain nested content.
 
     A variety of components are included by default. See [all the available components](https://idyll-lang.org/docs/components/). You can also use any html tag, for example: `[div] A div! [/div]`.
-
-    To create your own, add it to the `components/` folder. There are examples of how to use Idyll with React and D3 based components already included.
-
   [/Step]
 
   [Step]
@@ -143,38 +85,6 @@ http://web.mit.edu/6.02/www/s2012/handouts/youtube-pt.pdf
 
     [Range min:0 max:10 value:exampleVar /]
     [Display value:exampleVar /]
-
-    ```
-    [var name:"exampleVar" value:5 /]
-
-    [Range min:0 max:10 value:exampleVar /]
-    [Display value:exampleVar /]
-    ```
-  [/Step]
-
-[/Scroller]
-
-[Scroller]
-
-  [Step]
-
-    ##Scroller
-
-    The `Scroller` component is used to create scroll-based presentations. It can be used to create scrollytelling articles similar to this.
-    It takes a property `currentStep` which is updated when the user scrolls to a different step.
-
-    A persistent graphic may also provided using the `Graphic` component in order to create visualizations.
-
-  [/Step]
-
-  [Step]
-
-    ## Learn More
-
-    To learn more see the documentation at [https://idyll-lang.org/docs/](https://idyll-lang.org/docs/),
-    join our [chatroom](https://gitter.im/idyll-lang/Lobby), or see the project on [GitHub](https://github.com/idyll-lang/idyll).
-  [hr /]
-
   [/Step]
 
 [/Scroller]

@@ -10,8 +10,8 @@ const Scrabble = ({
   hasError,
   idyll,
   updateProps,
-  leading, // [1,1,0]
-  networkSize, // 24
+  leading, // e.g. [1,1,0]
+  networkSize, // e.g. 24
   ...props
 }) => {
   const hostSize = 32 - leading.length - networkSize;

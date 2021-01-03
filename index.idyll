@@ -19,7 +19,7 @@ It identifies the host, or more specifically its network interface, and it provi
 
 You may have seen an IP address before, notably IPv4, i.e. it follows the fourth version of the Internet protocol, deployed in 1983. This kind of IP address includes 4 numbers separated by dots. Each number actually represents 8 bits, or binary digits: 0s and 1s.
 
-[Address numbers:`[192,168,0,0]` /]
+[AddressExplorer numbers:`[192,168,0,0]` /]
 
 [Aside]
   192.168.0.0 is a private IP address. Not every device has a global internet IP. For example, at home we have 1 public IP address that the internet sees us as, which is the one assigned by the ISP to our router. This is NAT: putting many devices behind one public IP.
@@ -43,16 +43,6 @@ Originally all allocated to IANA. Later, parts of the address space were allocat
 
 The numbers tell us the network and host. Original, classful system: Various classes; reserved addresses; Class A, B, C (different bit lengths, check by bits in first octet); unused IPs within blocks
 
-The anticipated shortage has been the driving factor in creating and adopting several new technologies, including network address translation (NAT), Classless Inter-Domain Routing (CIDR) in 1993, and IPv6 in 1998. 1993 CIDR (Classless Inter-Domain Routing) lets us repartition to make smaller or larger blocks, subnet. Since a "classful" system didn't work, they came up with Classless Inter-Domain Routing (CIDR, pronounced cider) in 1993. Breaks IPs up into "blocks"
-
-Subnet, netmask
-
-/8 (16 mil) IP address blocks were the largest given out. FYI /8 (16 mil) IP address blocks were the largest given out. https://www.networkworld.com/article/3191503/mit-selling-8-million-coveted-ipv4-addresses-amazon-a-buyer.html
-
-https://bgp.he.net/AS14907 AS/ASN (identifier of organization that owns that particular IP / IP block, registered with American Reigstry of Internet Numbers), peers
-
-http://web.mit.edu/6.02/www/s2012/handouts/youtube-pt.pdf
-
 [var name:"state" value:0 /]
 [var name:"leading" value:`[[0],[1,0],[1,1,0]]` /]
 [var name:"networkSizes" value:`[7,14,21]` /]
@@ -64,51 +54,43 @@ http://web.mit.edu/6.02/www/s2012/handouts/youtube-pt.pdf
   [/Graphic]
 
   [Step]
-    Idyll is based on Markdown.
+    ## Class A
 
-    You can use familiar syntax
-    to create **bold** (`**bold**` ) and *italic* (`*italic*` ) styles,
+    Idyll is based on Markdown. You can use familiar syntax to create **bold** (`**bold**` ) and *italic* (`*italic*` ) styles,
   [/Step]
 
   [Step]
-    Components can be embedded using a bracket syntax and can contain nested content.
+    ## Class B
 
-    A variety of components are included by default. See [all the available components](https://idyll-lang.org/docs/components/). You can also use any html tag, for example: `[div] A div! [/div]`.
+    Components can be embedded using a bracket syntax and can contain nested content. A variety of components are included by default. See [all the available components](https://idyll-lang.org/docs/components/).
   [/Step]
 
   [Step]
-    ## Interactivity
+    ## Class C
 
-    Here is how you can instantiate a variable and bind it to a component:
-
-    [var name:"exampleVar" value:5 /]
-
-    [Range min:0 max:10 value:exampleVar /]
-    [Display value:exampleVar /]
+    Here is how you can instantiate a variable and bind it to a component. You can use familiar syntax to create **bold** (`**bold**` ) and *italic* (`*italic*` ) styles,
   [/Step]
 
 [/Scroller]
 
-[br/]
-# Technical Details
+The anticipated shortage has been the driving factor in creating and adopting several new technologies, including network address translation (NAT), Classless Inter-Domain Routing (CIDR) in 1993, and IPv6 in 1998. 1993 CIDR (Classless Inter-Domain Routing) lets us repartition to make smaller or larger blocks, subnet. Since a "classful" system didn't work, they came up with Classless Inter-Domain Routing (CIDR, pronounced cider) in 1993. Breaks IPs up into "blocks"
 
-## Installation
+[FullWidth]
+  [Scrabble leading:`[]` networkSize:`8` /]
+[/FullWidth]
 
-- Make sure you have `idyll` installed (`npm i -g idyll`).
-- Clone this repo and run `npm install`.
+[AddressWithBinary numbers:`[127,0,0,0]` /]
 
-## Developing a post locally
+Subnet, netmask
 
-Run `idyll`.
+/8 (16 mil) IP address blocks were the largest given out. FYI /8 (16 mil) IP address blocks were the largest given out. https://www.networkworld.com/article/3191503/mit-selling-8-million-coveted-ipv4-addresses-amazon-a-buyer.html
 
-## Building a post for production
+https://bgp.he.net/AS14907 AS/ASN (identifier of organization that owns that particular IP / IP block, registered with American Reigstry of Internet Numbers), peers
 
-Run `idyll build`. The output will appear in the top-level `build` folder. To change the output location, change the `output` option in `package.json`.
+http://web.mit.edu/6.02/www/s2012/handouts/youtube-pt.pdf
 
-## Deploying
+## Case Study: MIT
 
-Make sure your post has been built, then deploy the docs folder via any static hosting service.
+## What do we do since we're running out?
 
-## Dependencies
-
-You can install custom dependencies by running `npm install <package-name> --save`. Note that any collaborators will also need download the package locally by running `npm install` after pulling the changes.
+CIDR has worked well, but we have IPv6

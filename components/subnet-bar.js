@@ -21,10 +21,10 @@ const SubnetBar = ({ ...props }) => {
       update
         .enter()
         .append("rect")
-        .attr("height", 20)
+        .attr("height", 30)
         .attr("width", 16)
         .attr("x", (d) => d[1] * 16)
-        .attr("fill", "blue")
+        .attr("fill", "navy")
         .attr("class", "subnet");
 
       // update existing D3 elements
@@ -34,6 +34,7 @@ const SubnetBar = ({ ...props }) => {
       update.exit().remove();
 
       d3.selectAll("rect").on("mouseover", (d) => {
+        d3.event.target.style.fill = "cyan";
         const el = document.getElementById(`marker-${d[0]}`);
         if (el) {
           // optional chaining doesn't seem to work
@@ -41,6 +42,7 @@ const SubnetBar = ({ ...props }) => {
         }
       });
       d3.selectAll("rect").on("mouseout", (d) => {
+        d3.event.target.style.fill = "navy";
         const el = document.getElementById(`marker-${d[0]}`);
         if (el) {
           // optional chaining doesn't seem to work
@@ -60,11 +62,11 @@ const SubnetBar = ({ ...props }) => {
       <svg
         className="d3-component"
         width={width}
-        height={30}
+        height={40}
         preserveAspectRatio="xMidYMid meet"
         ref={d3Container}
         style={{
-          border: "1px solid red",
+          background: "#eee",
         }}
       />
     </div>

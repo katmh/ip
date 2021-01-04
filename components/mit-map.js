@@ -22,6 +22,10 @@ const MITMap = () => {
         zoom: 15,
       });
 
+      // for UX
+      map.addControl(new mapboxgl.NavigationControl());
+      map.scrollZoom.disable();
+
       map.on("load", () => {
         setMap(map);
         map.resize();

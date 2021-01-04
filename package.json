@@ -9,9 +9,11 @@
     "authorView": false
   },
   "dependencies": {
+    "d3": "^4.0.0",
     "idyll": "^4.0.0",
     "idyll-d3-component": "^2.0.0",
-    "d3": "^4.0.0"
+    "mapbox-gl": "^2.0.1",
+    "react-mapbox-gl": "^5.1.1"
   },
   "devDependencies": {
     "gh-pages": "^0.12.0"

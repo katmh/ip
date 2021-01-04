@@ -27,22 +27,25 @@ const Address = ({ hasError, idyll, updateProps, numbers, ...props }) => {
 
       <div className="binary_address">
         {binNumbers.map((numArr, binIdx) => {
-          const num = numArr.join("");
+          const num =
+            numArr.slice(0, 4).join("") + " " + numArr.slice(4, 8).join("");
           return (
             <div key={binIdx} className="number_container">
               <span>{num}</span>
 
               <div className="binary_switches">
                 {[...Array(8).keys()].map((checkIdx) => (
-                  <input
-                    key={checkIdx}
-                    type="checkbox"
-                    className="binary_switch"
-                    defaultChecked={
-                      binNumbers[binIdx][checkIdx].toString().charAt() == 1
-                    }
-                    onChange={() => handleChange(binIdx, checkIdx)}
-                  />
+                  <label className="switch" key={checkIdx}>
+                    <input
+                      type="checkbox"
+                      className="switch"
+                      defaultChecked={
+                        binNumbers[binIdx][checkIdx].toString().charAt() == 1
+                      }
+                      onChange={() => handleChange(binIdx, checkIdx)}
+                    />
+                    <span className="slider round"></span>
+                  </label>
                 ))}
               </div>
             </div>

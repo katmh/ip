@@ -21,8 +21,6 @@ You may have seen your IP address before: 4 numbers separated by dots. Each numb
 
 [AddressExplorer numbers:`[192,168,0,0]` /]
 
-[br /]
-
 Each of the four numbers in an IP address ranges from 0 (0000 0000 in binary) to 255 (1111 1111 in binary.) Toggle the switches to get new numbers and see how binary and decimal forms relate.
 
 In theory, we have 2^32 = 4,294,967,296, over 4 billion IP addresses. But there are over 4.66 billion people in the world who use the Internet, and many of them have multiple devices.
@@ -33,9 +31,7 @@ As you might guess, we're using up all the IP addresses. Who owns them and how d
 
 The IP address space is managed globally by the Internet Assigned Numbers Authority (IANA), and by five regional Internet registries (RIRs) responsible in their designated territories for assignment to local Internet registries, such as Internet service providers (ISPs), and other end users.
 
-In practice, certain ranges of numbers are reserved. Private aka unroutable: 192.168.*, 10.*. No entries in routing table for these addresses, so if your destination is one of these, the router will drop the packet.
-
-The example used here, 192.168.0.0, is a private IP address. Not every device has a global internet IP. For example, at home we have 1 public IP address that the internet sees us as, which is the one assigned by the ISP to our router. This is NAT: putting many devices behind one public IP.
+In practice, certain ranges of numbers are reserved. The example used above, 192.168.0.0, is a private, or unroutable, IP address. Not every device has a global internet IP. No entries in routing table for these addresses, so if your destination is one of these, the router will drop the packet. 
 
 Localhost is a host name that your computer understands to mean its own IP address (127.0.0.1). Your computer has what’s called a loopback network device that tells it that 127.0.0.1 == itself.
 
@@ -77,7 +73,7 @@ Class D is for multicast: special cases largely for streaming audio and video to
 
 Many organizations needed more IPs than Class C could provide, but didn't use nearly as many as Class B offered. This become a problem especially during the dot com boom, as droves of people and companies went online. 
 
-The anticipated shortage led to the creation of several new technologies. We mentioned network address translation (NAT) above, where multiple private addresses are placed under one public address.
+The anticipated shortage led to the creation of several new technologies. We mentioned network address translation (NAT) above, where multiple private addresses are placed under one public address. For example, at home you probably have 1 public IP address that the internet sees you as, which is the one assigned by the ISP to our router.
 
 Another invervention was Classless Inter-Domain Routing (CIDR, pronounced cider), developed in 1993 in contrast to the previous, "classful" system of partitioning the IP space.
 

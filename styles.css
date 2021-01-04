@@ -90,3 +90,12 @@
 .subnet {
   stroke: white;
 }
+
+.marker {
+  background: cyan;
+  border: 1px solid navy;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}

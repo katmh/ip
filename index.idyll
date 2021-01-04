@@ -90,15 +90,13 @@ Subnet, netmask
 /8 (16 mil) IP address blocks were the largest given out. FYI /8 (16 mil) IP address blocks were the largest given out. https://www.networkworld.com/article/3191503/mit-selling-8-million-coveted-ipv4-addresses-amazon-a-buyer.html
 
 [FullWidth]
-  ![Map](/static/images/whois-20071001.png)
+  ![Map](/static/whois-20071001.png)
 [/FullWidth]
 
 ## Case Study: MIT
 
-[MITMap /]
-
 [FullWidth]
-  [SubnetBar /]
+  [MITMap /]
 [/FullWidth]
 
 ## What do we do since we're running out?

@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Scrabble from "./scrabble";
 
-const CIDRExplorer = () => {
-  const [prefix, setPrefix] = useState(7);
+const CIDRExplorer = ({ prefix }) => {
   return (
     <div>
       <Scrabble networkSize={prefix} />

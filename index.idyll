@@ -78,7 +78,9 @@ The numbers tell us the network and host. Original, classful system: Various cla
 The anticipated shortage has been the driving factor in creating and adopting several new technologies, including network address translation (NAT), Classless Inter-Domain Routing (CIDR) in 1993, and IPv6 in 1998. 1993 CIDR (Classless Inter-Domain Routing) lets us repartition to make smaller or larger blocks, subnet. Since a "classful" system didn't work, they came up with Classless Inter-Domain Routing (CIDR, pronounced cider) in 1993. Breaks IPs up into "blocks"
 
 [FullWidth]
-  [CIDRExplorer /]
+  [var name:"prefix" value:12 /]
+  [CIDRExplorer prefix:prefix /]
+  [Dynamic value:prefix min:4 max:30 display:`String(prefix)` /]
 [/FullWidth]
 
 [AddressWithBinary numbers:`[127,0,0,0]` /]

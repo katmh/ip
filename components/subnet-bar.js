@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import * as d3 from "d3";
 import subnets from "../data/mit-subnets";
 
-const SubnetBar = ({ ...props }) => {
+const SubnetBar = ({ setBldg, ...props }) => {
   const d3Container = useRef(null);
 
   // list of numbers in 18.18.xx.0
@@ -40,6 +40,8 @@ const SubnetBar = ({ ...props }) => {
           // optional chaining doesn't seem to work
           el.style.background = "cyan";
         }
+        setBldg(d); // ["W2", 16]
+        //document.getElementById("overlay").innerHTML = d;
       });
       d3.selectAll("rect").on("mouseout", (d) => {
         d3.event.target.style.fill = "navy";

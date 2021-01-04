@@ -14,7 +14,10 @@ const Scrabble = ({
   networkSize, // e.g. 24
   ...props
 }) => {
-  const hostSize = 32 - leading.length - networkSize;
+  const networkSizeNum = Number(networkSize);
+  const hostSize = 32 - leading.length - networkSizeNum;
+  const networkArray = [...Array(networkSizeNum).keys()];
+  const hostArray = [...Array(hostSize).keys()];
   return (
     <div {...props} className="scrabble">
       {leading.map((bit, i) => {
@@ -31,12 +34,12 @@ const Scrabble = ({
         );
       })}
       <div className="scrabble_block_set_container">
-        <p className="scrabble_label">Network ({networkSize} bits)</p>
+        <p className="scrabble_label">Network ({networkSizeNum} bits)</p>
         <div className="scrabble_block_set">
-          {[...Array(networkSize).keys()].map((i) => {
+          {networkArray.map((i) => {
             return (
               <div
-                key={i}
+                key={`network-${i}`}
                 className="scrabble_block"
                 style={{
                   borderBottom: `2px solid ${COLORS.network}`,
@@ -47,9 +50,11 @@ const Scrabble = ({
         </div>
       </div>
       <div className="scrabble_block_set_container">
-        <p className="scrabble_label">Host ({hostSize} bits)</p>
+        <p className="scrabble_label" style={{ marginBottom: 0 }}>
+          Host ({hostSize} bits)
+        </p>
         <div className="scrabble_block_set">
-          {[...Array(hostSize).keys()].map((i) => {
+          {hostArray.map((i) => {
             return (
               <div
                 key={i}

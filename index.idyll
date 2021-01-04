@@ -15,35 +15,33 @@
 
 ## What is an IP address?
 
-An IP address is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.
+Every device on the Internet has an address. Like your street address is made of your street and your building number, an IP address is made of a network and a host, which is a device, like a computer or printer, on the network.
 
-It identifies the host, or more specifically its network interface, and it provides the location of the host in the network, and thus the capability of establishing a path to that host.
-
-You may have seen an IP address before, notably IPv4, i.e. it follows the fourth version of the Internet protocol, deployed in 1983. This kind of IP address includes 4 numbers separated by dots. Each number actually represents 8 bits, or binary digits: 0s and 1s.
+You may have seen your IP address before: 4 numbers separated by dots. Each number (in decimal, human-friendly form) represents 8 bits, or binary digits: 0s and 1s.
 
 [AddressExplorer numbers:`[192,168,0,0]` /]
 
-[Aside]
-  192.168.0.0 is a private IP address. Not every device has a global internet IP. For example, at home we have 1 public IP address that the internet sees us as, which is the one assigned by the ISP to our router. This is NAT: putting many devices behind one public IP.
-[/Aside]
+[br /]
 
-Localhost is a host name that your computer understands to mean its own IP address (127.0.0.1). Your computer has what’s called a loopback network device that tells it that 127.0.0.1 == itself.
+Each of the four numbers in an IP address ranges from 0 (0000 0000 in binary) to 255 (1111 1111 in binary.) Toggle the switches to get new numbers and see how binary and decimal forms relate.
 
-Each of the four numbers in an IP address ranges from 1 (0000 0000 in binary) to 256 (1111 1111 in binary.) In practice, certain ranges of numbers are reserved.
+In theory, we have 2^32 = 4,294,967,296, over 4 billion IP addresses. But there are over 4.66 billion people in the world who use the Internet, and many of them have multiple devices.
 
-Calculating in theory, we have at maximum 2^32 = 4,294,967,296, over 4 billion IP addresses. However, there are over 4.66 billion people in the world who use the Internet, and many individuals and organizations have multiple devices per person.
-
-In fact, we're out of IP addresses. Who owns them and how did we get here? What's next?
-
-Private aka unroutable: 192.168.*, 10.*. No entries in routing table for these addresses, so if your destination is one of these, the router will drop the packet.
+As you might guess, we're using up all the IP addresses. Who owns them and how did we get here? What's next?
 
 ## How have IP addresses been allocated?
 
 The IP address space is managed globally by the Internet Assigned Numbers Authority (IANA), and by five regional Internet registries (RIRs) responsible in their designated territories for assignment to local Internet registries, such as Internet service providers (ISPs), and other end users.
 
-Originally all allocated to IANA. Later, parts of the address space were allocated to other registries. IPv4 addresses were distributed by IANA to the RIRs in blocks of approximately 16.8 million addresses each, but have been exhausted at the IANA level since January 2011. The main market forces that accelerated IPv4 address depletion included the rapidly growing number of Internet users, always-on devices, and mobile devices.
+In practice, certain ranges of numbers are reserved. Private aka unroutable: 192.168.*, 10.*. No entries in routing table for these addresses, so if your destination is one of these, the router will drop the packet.
 
-The numbers tell us the network and host. Original, classful system: Various classes; reserved addresses; Class A, B, C (different bit lengths, check by bits in first octet); unused IPs within blocks
+The example used here, 192.168.0.0, is a private IP address. Not every device has a global internet IP. For example, at home we have 1 public IP address that the internet sees us as, which is the one assigned by the ISP to our router. This is NAT: putting many devices behind one public IP.
+
+Localhost is a host name that your computer understands to mean its own IP address (127.0.0.1). Your computer has what’s called a loopback network device that tells it that 127.0.0.1 == itself.
+
+IPv4 addresses were distributed by IANA to the RIRs in blocks of approximately 16.8 million addresses each, but have been exhausted at the IANA level since January 2011. The main market forces that accelerated IPv4 address depletion included the rapidly growing number of Internet users, always-on devices, and mobile devices.
+
+Original, classful system: Various classes; reserved addresses; Class A, B, C (different bit lengths, check by bits in first octet.
 
 [var name:"state" value:0 /]
 [var name:"leading" value:`[[0],[1,0],[1,1,0]]` /]
@@ -58,34 +56,40 @@ The numbers tell us the network and host. Original, classful system: Various cla
   [Step]
     ## Class A
 
-    Idyll is based on Markdown. You can use familiar syntax to create **bold** (`**bold**` ) and *italic* (`*italic*` ) styles,
+    Beginning with 0 followed by 7 digits for the rest of the network, Class A is for huge networks. They support up to 16 million hosts.
   [/Step]
 
   [Step]
     ## Class B
 
-    Components can be embedded using a bracket syntax and can contain nested content. A variety of components are included by default. See [all the available components](https://idyll-lang.org/docs/components/).
+    "Used for medium and large-sized networks in enterprises and organizations. They support up to 65,000 hosts on 16,000 individual networks."
   [/Step]
 
   [Step]
     ## Class C
 
-    Here is how you can instantiate a variable and bind it to a component. You can use familiar syntax to create **bold** (`**bold**` ) and *italic* (`*italic*` ) styles,
+    "Most common and used in small business and home networks. These support up to 256 hosts on each of 2 million networks."
   [/Step]
 
 [/Scroller]
 
-The anticipated shortage has been the driving factor in creating and adopting several new technologies, including network address translation (NAT), Classless Inter-Domain Routing (CIDR) in 1993, and IPv6 in 1998. 1993 CIDR (Classless Inter-Domain Routing) lets us repartition to make smaller or larger blocks, subnet. Since a "classful" system didn't work, they came up with Classless Inter-Domain Routing (CIDR, pronounced cider) in 1993. Breaks IPs up into "blocks"
+Class D is for multicast: special cases largely for streaming audio and video to many subscribers at once. "Class E addresses are reserved for research purposes by those responsible for Internet networking and IP address research, management, and development."
 
+Many organizations needed more IPs than Class C could provide, but didn't use nearly as many as Class B offered. This become a problem especially during the dot com boom, as droves of people and companies went online. 
+
+The anticipated shortage led to the creation of several new technologies. We mentioned network address translation (NAT) above, where multiple private addresses are placed under one public address.
+
+Another invervention was Classless Inter-Domain Routing (CIDR, pronounced cider), developed in 1993 in contrast to the previous, "classful" system of partitioning the IP space.
+
+In CIDR notation, IP addresses are followed by a slash and a number, which tells you how many bits at the beginning represent the network. The largest blocks of IPs given to organizations are /8 ("slash eight"). The first 8 bits, or 1 byte, represent the network, so there are 24 bits for the host — 2^24 = 16 million hosts.
+
+[br /]
 [FullWidth]
-  [var name:"prefix" value:12 /]
-  [CIDRExplorer prefix:prefix /]
-  [Dynamic value:prefix min:4 max:30 display:`String(prefix)` /]
+  [CIDRExplorer prefix:`12` /]
 [/FullWidth]
+[br /]
 
-[AddressWithBinary numbers:`[127,0,0,0]` /]
-
-Subnet, netmask
+Those organizations then split up their IPs to give to other companies and entities. Here's a heatmap of "what the Internet looked like" in October 2007:
 
 [Scroller]
 
@@ -94,11 +98,11 @@ Subnet, netmask
   [/Graphic]
 
   [Step]
-    /8 (16 mil) IP address blocks were the largest given out.
+    "Each pixel in the full-size image represents a single /24 network containing up to 256 hosts. The color of each pixel corresponds to the Regional Internet Registries where the address space is listed."
   [/Step]
 
   [Step]
-    https://www.networkworld.com/article/3191503/mit-selling-8-million-coveted-ipv4-addresses-amazon-a-buyer.html
+    "Areas are shaded with varying levels of transparency. Larger blocks of address space are more transparent, which also makes them darker. Thus, varying shades of a color indicate different-sized blocks of addresses appearing in the whois data."
   [/Step]
 
   [Step]
@@ -109,12 +113,12 @@ Subnet, netmask
 
 [br /]
 
-## Case Study: MIT
+## A legacy abundance of IPs
 
-Here is how you can instantiate a variable and bind it to a component. You can use familiar syntax to create **bold** (`**bold**` ) and *italic* (`*italic*` ) styles,
+As one of the early pioneers of the Internet, the Massachusetts Institute of Technology, among other schools, received a huge chunk of IP addresses back in the day.
 
 [FullWidth]
-  [MITMap /]
+  [MapContainer /]
 [/FullWidth]
 
 [br /]
@@ -123,6 +127,8 @@ Here is how you can instantiate a variable and bind it to a component. You can u
 
 CIDR has worked well, but we have IPv6
 
-Visualize how big the new IPv6 space is
+[FullWidth]
+  [IPSpace /]
+[/FullWidth]
 
 And now we wait!

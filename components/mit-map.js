@@ -1,15 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import buildings from "../data/buildings";
-import SubnetBar from "./subnet-bar";
 
 const MITMap = () => {
   const [map, setMap] = useState(null);
   const mapContainer = useRef(null);
-
-  const handleClick = () => {
-    document.getElementById("marker-1").style.background = "red";
-  };
 
   useEffect(() => {
     mapboxgl.accessToken =
@@ -55,16 +50,9 @@ const MITMap = () => {
 
   return (
     <div
-      style={{
-        padding: "0 5%",
-      }}
-    >
-      <div
-        ref={(el) => (mapContainer.current = el)}
-        style={{ height: "60vh", width: "100%" }}
-      />
-      <SubnetBar />
-    </div>
+      ref={(el) => (mapContainer.current = el)}
+      style={{ height: "60vh", width: "100%" }}
+    />
   );
 };
 

@@ -87,17 +87,37 @@ The anticipated shortage has been the driving factor in creating and adopting se
 
 Subnet, netmask
 
-/8 (16 mil) IP address blocks were the largest given out. FYI /8 (16 mil) IP address blocks were the largest given out. https://www.networkworld.com/article/3191503/mit-selling-8-million-coveted-ipv4-addresses-amazon-a-buyer.html
+[Scroller]
 
-[FullWidth]
-  ![Map](/static/whois-20071001.png)
-[/FullWidth]
+  [Graphic]
+    ![Map](/static/whois-20071001.png)
+  [/Graphic]
+
+  [Step]
+    /8 (16 mil) IP address blocks were the largest given out.
+  [/Step]
+
+  [Step]
+    https://www.networkworld.com/article/3191503/mit-selling-8-million-coveted-ipv4-addresses-amazon-a-buyer.html
+  [/Step]
+
+  [Step]
+    Owners include various registries, the US Department of Defense, and telecom companies.
+  [/Step]
+
+[/Scroller]
+
+[br /]
 
 ## Case Study: MIT
+
+Here is how you can instantiate a variable and bind it to a component. You can use familiar syntax to create **bold** (`**bold**` ) and *italic* (`*italic*` ) styles,
 
 [FullWidth]
   [MITMap /]
 [/FullWidth]
+
+[br /]
 
 ## What do we do since we're running out?
 

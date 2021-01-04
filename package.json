@@ -13,6 +13,7 @@
     "idyll": "^4.0.0",
     "idyll-d3-component": "^2.0.0",
     "mapbox-gl": "^2.0.1",
+    "react-helmet": "^6.1.0",
     "react-mapbox-gl": "^5.1.1"
   },
   "devDependencies": {

@@ -94,7 +94,8 @@ const buildings = [
       mailing: "77 Massachusetts Avenue",
       viewangle: "southwest corner",
     },
-  ][
+  ],
+  [
     {
       category: ["building"],
       long_wgs84: -71.09018269,
@@ -118,7 +119,7 @@ const buildings = [
           name: "David L. desJardins (1983) Graduate Student Pavilion (2-490)",
         },
       ],
-    }
+    },
   ],
   [
     {
@@ -468,7 +469,8 @@ const buildings = [
       ],
       name: "Ray and Maria Stata Center",
     },
-  ][
+  ],
+  [
     {
       category: ["building"],
       long_wgs84: -71.089304,
@@ -579,7 +581,7 @@ const buildings = [
           altname: ["Athena Cluster"],
         },
       ],
-    }
+    },
   ],
   [
     {
@@ -951,7 +953,8 @@ const buildings = [
       mailing: "77 Massachusetts Avenue",
       viewangle: "northwest corner",
     },
-  ][
+  ],
+  [
     {
       category: ["building"],
       long_wgs84: -71.09349326,
@@ -976,7 +979,7 @@ const buildings = [
           name: "MIT Rocket Team Lab",
         },
       ],
-    }
+    },
   ],
   [
     {
@@ -1748,7 +1751,8 @@ const buildings = [
       ],
       name: "Sidney Pacific",
     },
-  ][
+  ],
+  [
     {
       category: ["building", "residence", "dormitory"],
       website: "http://web.mit.edu/simmons-hall/www/",
@@ -1780,7 +1784,7 @@ const buildings = [
           altname: ["Athena Cluster"],
         },
       ],
-    }
+    },
   ],
   [
     {
@@ -2348,7 +2352,8 @@ const buildings = [
       mailing: "77 Massachusetts Avenue",
       viewangle: "south",
     },
-  ][
+  ],
+  [
     {
       category: ["building"],
       long_wgs84: -71.08773035,
@@ -2363,8 +2368,9 @@ const buildings = [
       floorplans: ["0", "1"],
       mailing: "77 Massachusetts Avenue",
       viewangle: "southwest",
-    }
-  ][
+    },
+  ],
+  [
     {
       category: ["building"],
       long_wgs84: -71.09311746,
@@ -2459,7 +2465,7 @@ const buildings = [
           name: "Lactation Room (NE49-3053)",
         },
       ],
-    }
+    },
   ],
   [
     {
@@ -2563,7 +2569,8 @@ const buildings = [
       mailing: "77 Massachusetts Avenue",
       id: "object-NE46",
     },
-  ][
+  ],
+  [
     {
       category: ["building"],
       long_wgs84: -71.09085031,
@@ -2572,8 +2579,9 @@ const buildings = [
       street: "1 Kendall Square",
       bldgnum: "NE83",
       id: "object-NE83",
-    }
-  ][
+    },
+  ],
+  [
     {
       category: ["building", "residence"],
       long_wgs84: -71.0938409,
@@ -2586,8 +2594,9 @@ const buildings = [
       floorplans: ["0", "1", "2", "3"],
       mailing: "311 Memorial Drive",
       viewangle: "southeast corner",
-    }
-  ][
+    },
+  ],
+  [
     {
       category: ["building"],
       long_wgs84: -71.08003694,
@@ -2620,7 +2629,7 @@ const buildings = [
         { url: "http://web.mit.edu/sktech/", name: "MIT Skoltech Initiative" },
         { url: "http://web.mit.edu/agelab/", name: "Age Lab" },
       ],
-    }
+    },
   ],
   [
     {
@@ -2724,7 +2733,8 @@ const buildings = [
       mailing: "77 Massachusetts Avenue",
       viewangle: "northwest corner",
     },
-  ][
+  ],
+  [
     {
       category: ["building"],
       long_wgs84: -71.09780405,
@@ -2739,8 +2749,9 @@ const buildings = [
       floorplans: ["1"],
       mailing: "77 Massachusetts Avenue",
       viewangle: "northeast corner",
-    }
-  ][
+    },
+  ],
+  [
     {
       category: ["building", "residence", "dormitory"],
       website: "http://scripts.mit.edu/~ashdown/",
@@ -2768,7 +2779,7 @@ const buildings = [
           altname: ["Athena Cluster"],
         },
       ],
-    }
+    },
   ],
   [
     {
@@ -2837,7 +2848,8 @@ const buildings = [
       mailing: "77 Massachusetts Avenue",
       viewangle: "northwest corner",
     },
-  ][
+  ],
+  [
     {
       category: ["building"],
       long_wgs84: -71.10946972,
@@ -2866,7 +2878,7 @@ const buildings = [
           altname: ["Postal Services", "Shipping"],
         },
       ],
-    }
+    },
   ],
   [
     {
@@ -3028,7 +3040,8 @@ const buildings = [
       mailing: "77 Massachusetts Avenue",
       id: "object-W64",
     },
-  ][
+  ],
+  [
     {
       category: ["building"],
       long_wgs84: -71.09736187,
@@ -3041,8 +3054,9 @@ const buildings = [
       floorplans: ["0", "1", "2", "3"],
       mailing: "77 Massachusetts Avenue",
       viewangle: "north side",
-    }
-  ][
+    },
+  ],
+  [
     {
       category: ["building", "Eastgate Parking Area"],
       long_wgs84: -71.08696429,
@@ -3057,8 +3071,9 @@ const buildings = [
       floorplans: ["0", "1", "2", "3", "3M", "R"],
       mailing: "111 Memorial Drive",
       viewangle: "south side",
-    }
-  ][
+    },
+  ],
+  [
     {
       category: ["building"],
       long_wgs84: -71.09686312,
@@ -3078,7 +3093,7 @@ const buildings = [
           name: "Nuclear Reactor Laboratory",
         },
       ],
-    }
+    },
   ],
   [
     {
@@ -3371,7 +3386,8 @@ const buildings = [
       mailing: "77 Massachusetts Avenue",
       viewangle: "southeast corner",
     },
-  ][
+  ],
+  [
     {
       category: ["building"],
       long_wgs84: -71.09871678,
@@ -3390,7 +3406,7 @@ const buildings = [
           name: "Plasma Science and Fusion Center",
         },
       ],
-    }
+    },
   ],
   [
     {
@@ -3406,7 +3422,8 @@ const buildings = [
       mailing: "77 Massachusetts Avenue",
       viewangle: "northwest corner",
     },
-  ][
+  ],
+  [
     {
       category: ["building"],
       long_wgs84: -71.10467329,
@@ -3425,7 +3442,7 @@ const buildings = [
           altname: ["Police, MIT", "Campus Police", "Security, Personal"],
         },
       ],
-    }
+    },
   ],
   [
     {
@@ -3633,7 +3650,8 @@ const buildings = [
       mailing: "77 Massachusetts Avenue",
       viewangle: "south",
     },
-  ][
+  ],
+  [
     {
       category: ["building"],
       long_wgs84: -71.09505791,
@@ -3655,9 +3673,10 @@ const buildings = [
         },
         { category: ["room"], name: "Little Kresge" },
       ],
-    }
+    },
   ],
-  [][
+  [],
+  [
     {
       category: ["building"],
       long_wgs84: -71.09652993,
@@ -3679,7 +3698,7 @@ const buildings = [
         },
         { name: "Motorcycle parking" },
       ],
-    }
+    },
   ],
   [
     {
@@ -4130,7 +4149,8 @@ const buildings = [
       mailing: "3 Ames Street",
       viewangle: "north side",
     },
-  ][
+  ],
+  [
     {
       category: ["building", "residence", "dormitory", "Amherst Parking Area"],
       website: "http://web.mit.edu/macgregor/www/",
@@ -4157,7 +4177,7 @@ const buildings = [
           altname: ["Athena Cluster"],
         },
       ],
-    }
+    },
   ],
   [
     {
@@ -4244,7 +4264,8 @@ const buildings = [
       mailing: "471-476 Memorial Drive",
       viewangle: "north side",
     },
-  ][
+  ],
+  [
     {
       category: ["building", "residence", "dormitory", "Amherst Parking Area"],
       website: "http://web.mit.edu/next/www/",
@@ -4276,7 +4297,7 @@ const buildings = [
           altname: ["Athena Cluster"],
         },
       ],
-    }
+    },
   ],
   [
     {
@@ -4452,7 +4473,8 @@ const buildings = [
       mailing: "3 Ames Street (Rear)",
       viewangle: "northwest corner",
     },
-  ][
+  ],
+  [
     {
       category: ["building", "residence", "dormitory", "Amherst Parking Area"],
       website: "http://web.mit.edu/greenhall/www/",
@@ -4468,7 +4490,7 @@ const buildings = [
       mailing: "350 Memorial Drive",
       viewangle: "north",
       contents: [{ url: "http://theta.mit.edu/", name: "Kappa Alpha Theta" }],
-    }
+    },
   ],
   [
     {
@@ -4676,7 +4698,8 @@ const buildings = [
       mailing: "3 Ames Street (Rear)",
       viewangle: "northwest corner",
     },
-  ][
+  ],
+  [
     {
       category: ["building", "residence", "dormitory", "Amherst Parking Area"],
       website: "http://web.mit.edu/greenhall/www/",
@@ -4692,7 +4715,7 @@ const buildings = [
       mailing: "350 Memorial Drive",
       viewangle: "north",
       contents: [{ url: "http://theta.mit.edu/", name: "Kappa Alpha Theta" }],
-    }
+    },
   ],
   [
     {

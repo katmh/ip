@@ -140,17 +140,26 @@ input:checked + .slider:before {
   height: 25px;
   width: 15px;
   margin: 0 2.5px;
+  border-bottom-width: 5px;
+  border-bottom-style: solid;
 }
 
 .bit {
   position: absolute;
+  font: 1.25rem/1 monospace;
+  text-align: center;
 }
 
 .scrabble_label {
-  position: absolute;
   font-size: 1rem;
+  line-height: 1.2;
+  color: #555;
+  margin: 0;
+  text-align: center;
+  height: 0;
+  position: relative;
+  top: -2.5rem;
   text-transform: uppercase;
-  color: #333;
 }
 
 .subnet {

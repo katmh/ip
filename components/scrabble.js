@@ -26,7 +26,7 @@ const Scrabble = ({
             key={i}
             className="scrabble_block"
             style={{
-              borderBottom: `2px solid ${COLORS.leading}`,
+              borderBottomColor: COLORS.leading,
             }}
           >
             <p className="bit">{bit}</p>
@@ -34,7 +34,18 @@ const Scrabble = ({
         );
       })}
       <div className="scrabble_block_set_container">
-        <p className="scrabble_label">Network ({networkSizeNum} bits)</p>
+        <div
+          style={{
+            position: "absolute",
+            borderLeft: `2px solid ${COLORS.network}`,
+            height: "4rem",
+            marginTop: "-3rem",
+          }}
+        />
+        <p className="scrabble_label">
+          Network
+          <br />({networkSizeNum} bits)
+        </p>
         <div className="scrabble_block_set">
           {networkArray.map((i) => {
             return (
@@ -42,7 +53,7 @@ const Scrabble = ({
                 key={`network-${i}`}
                 className="scrabble_block"
                 style={{
-                  borderBottom: `2px solid ${COLORS.network}`,
+                  borderBottomColor: COLORS.network,
                 }}
               />
             );
@@ -50,8 +61,17 @@ const Scrabble = ({
         </div>
       </div>
       <div className="scrabble_block_set_container">
+        <div
+          style={{
+            position: "absolute",
+            borderLeft: `2px solid ${COLORS.host}`,
+            height: "4rem",
+            marginTop: "-3rem",
+          }}
+        />
         <p className="scrabble_label" style={{ marginBottom: 0 }}>
-          Host ({hostSize} bits)
+          Host
+          <br />({hostSize} bits)
         </p>
         <div className="scrabble_block_set">
           {hostArray.map((i) => {
@@ -60,7 +80,7 @@ const Scrabble = ({
                 key={i}
                 className="scrabble_block"
                 style={{
-                  borderBottom: `2px solid ${COLORS.host}`,
+                  borderBottomColor: COLORS.host,
                 }}
               />
             );

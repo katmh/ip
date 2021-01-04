@@ -7,6 +7,10 @@ const MITMap = () => {
   const [map, setMap] = useState(null);
   const mapContainer = useRef(null);
 
+  const handleClick = () => {
+    document.getElementById("marker-1").style.background = "red";
+  };
+
   useEffect(() => {
     mapboxgl.accessToken =
       "pk.eyJ1Ijoia2F0bWgiLCJhIjoiY2tqaHIwc2g3NG83bjJ5c2I0MzM2cmdpeiJ9.YcnjXWaMrP_-eSnElPXZJA";
@@ -15,7 +19,7 @@ const MITMap = () => {
         container: mapContainer.current,
         style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
         center: [-71.092, 42.36],
-        zoom: 14,
+        zoom: 15,
       });
 
       map.on("load", () => {
@@ -24,11 +28,20 @@ const MITMap = () => {
       });
 
       buildings.forEach((bldg) => {
+        const coordinates = [bldg.long_wgs84, bldg.lat_wgs84];
+        const description = bldg.name;
+
         // create a HTML element for each feature
-        var el = document.createElement("div");
+        const el = document.createElement("div");
         el.className = "marker";
+        el.id = `marker-${bldg.bldgnum}`;
+
         new mapboxgl.Marker(el)
-          .setLngLat([bldg.long_wgs84, bldg.lat_wgs84])
+          .setLngLat(coordinates)
+          .setPopup(
+            new mapboxgl.Popup({ offset: 25 }) // add popups
+              .setHTML(description)
+          )
           .addTo(map);
       });
     };

@@ -4,28 +4,49 @@ import subnets from "../data/mit-subnets";
 
 const SubnetBar = ({ ...props }) => {
   const d3Container = useRef(null);
-  props.data = subnets.map((d) => d[1]).sort((a, b) => a - b);
+
+  // list of numbers in 18.18.xx.0
+  props.data = subnets;
+
+  const width = Math.max(...subnets.map((arr) => arr[1])) * 16 + 16;
 
   useEffect(() => {
     if (props.data && d3Container.current) {
       const svg = d3.select(d3Container.current);
-      // Bind D3 data
-      const update = svg.append("g").selectAll("text").data(props.data);
 
-      // Enter new D3 elements
+      // bind D3 data
+      const update = svg.append("g").selectAll("rect").data(props.data);
+
+      // enter new D3 elements
       update
         .enter()
         .append("rect")
         .attr("height", 20)
         .attr("width", 16)
-        .attr("x", (d) => d * 16)
+        .attr("x", (d) => d[1] * 16)
         .attr("fill", "blue")
         .attr("class", "subnet");
 
-      // Update existing D3 elements
+      // update existing D3 elements
       update.attr("x", (_, i) => i * 40).text((d) => d);
-      // Remove old D3 elements
+
+      // remove old D3 elements
       update.exit().remove();
+
+      d3.selectAll("rect").on("mouseover", (d) => {
+        const el = document.getElementById(`marker-${d[0]}`);
+        if (el) {
+          // optional chaining doesn't seem to work
+          el.style.background = "cyan";
+        }
+      });
+      d3.selectAll("rect").on("mouseout", (d) => {
+        const el = document.getElementById(`marker-${d[0]}`);
+        if (el) {
+          // optional chaining doesn't seem to work
+          el.style.background = "navy";
+        }
+      });
     }
   }, [props.data, d3Container.current]);
 
@@ -38,7 +59,7 @@ const SubnetBar = ({ ...props }) => {
     >
       <svg
         className="d3-component"
-        width={Math.max(...props.data) * 16 + 16 + "px"}
+        width={width}
         height={30}
         preserveAspectRatio="xMidYMid meet"
         ref={d3Container}

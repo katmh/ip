@@ -92,10 +92,11 @@
 }
 
 .marker {
-  background: cyan;
-  border: 1px solid navy;
-  width: 12px;
-  height: 12px;
+  background: navy;
+  border: 1px solid white;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   cursor: pointer;
+  transition: 0.5s;
 }

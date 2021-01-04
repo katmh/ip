@@ -124,4 +124,4 @@ const subnets = [
   ["W84", 251.0],
   ["NW10", 252.0],
 ];
-export default subnets;
+module.exports = subnets;

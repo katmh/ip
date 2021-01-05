@@ -22,27 +22,35 @@ p {
 
 header {
   padding: 5rem 10% 4rem;
-  background: #baefed;
+  background: #222;
   margin-bottom: 4rem;
 }
 
 header h1 {
   font: 900 3.5rem/1 Inconsolata, monospace;
   letter-spacing: -1px;
-  color: #2c2a24;
+  color: #baefed;
   margin: 0;
+  display: inline;
+}
+
+header h1:after {
+  content: " ";
 }
 
 header h1:nth-of-type(2n) {
-  -webkit-text-stroke: #2c2a24;
+  -webkit-text-stroke: #baefed;
   -webkit-text-stroke-width: 2px;
   -webkit-text-fill-color: transparent;
 }
 
 .byline {
   margin-top: 2rem;
-  color: #555;
+  color: #ccc;
   margin-bottom: 0;
+}
+.byline a {
+  color: #eee;
 }
 
 h2 {
@@ -96,10 +104,20 @@ h2 {
 }
 
 .binary_address {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-gap: 2rem;
   font-size: 1.25rem;
   margin-bottom: 2rem;
+}
+@media (min-width: 600px) {
+  .binary_address {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .binary_address {
+    padding: 0 5%;
+  }
 }
 
 .binary_address .number_container {

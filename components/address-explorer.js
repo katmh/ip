@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { dec2binArray, bin2dec } from "./helpers";
 import Color from "./color";
 
-const Switch = ({ binNumbers, binIdx, checkIdx, handleChange, numbers }) => {
+const Bit = ({ bit, binNumbers, binIdx, checkIdx, handleChange, numbers }) => {
   return (
     <div>
+      <div>{bit}</div>
       <label className="switch">
         <input
           type="checkbox"
@@ -14,7 +15,7 @@ const Switch = ({ binNumbers, binIdx, checkIdx, handleChange, numbers }) => {
         />
         <span className="slider round"></span>
       </label>
-      <span className="power_of_two">
+      <span className="power_of_two math">
         2<sup>{7 - checkIdx}</sup>
         {checkIdx == 7 ? ` = ${bin2dec(binNumbers[binIdx].join(""))}` : " +"}
       </span>
@@ -41,9 +42,9 @@ const Address = ({ hasError, idyll, updateProps, numbers, ...props }) => {
           return (
             <span key={i} className="number">
               {i == 0 || i == 1 ? (
-                <Color color="#ff8080">{decNum}</Color>
+                <Color color="#e53535">{decNum}</Color>
               ) : (
-                <Color color="#8080ff">{decNum}</Color>
+                <Color color="#4545ef">{decNum}</Color>
               )}
             </span>
           );
@@ -55,8 +56,9 @@ const Address = ({ hasError, idyll, updateProps, numbers, ...props }) => {
           <div
             key={binIdx}
             style={{
-              width: "50%",
+              width: "auto",
               display: "inherit",
+              margin: "1rem auto",
             }}
           >
             <div
@@ -64,10 +66,6 @@ const Address = ({ hasError, idyll, updateProps, numbers, ...props }) => {
                 display: "grid",
                 gridTemplateColumns: "repeat(2, 1fr)",
                 gridGap: "1rem",
-                marginTop: "2rem",
-                marginBottom: "2rem",
-                marginLeft: `${binIdx % 2 == 0 ? "auto" : "3rem"}`,
-                marginRight: `${binIdx % 2 == 1 ? "auto" : "3rem"}`,
               }}
             >
               <div
@@ -77,20 +75,19 @@ const Address = ({ hasError, idyll, updateProps, numbers, ...props }) => {
                 }}
               >
                 {/* first four digits, aka first row of grid */}
-                {numArr.slice(0, 4).map((num, i) => {
-                  return <div key={i}>{num}</div>;
+                {numArr.slice(0, 4).map((num, checkIdx) => {
+                  return (
+                    <Bit
+                      key={checkIdx}
+                      bit={num}
+                      binNumbers={binNumbers}
+                      binIdx={binIdx}
+                      checkIdx={checkIdx}
+                      handleChange={handleChange}
+                      numbers={numbers}
+                    />
+                  );
                 })}
-                {/* their switches, second row of grid */}
-                {[...Array(4).keys()].map((checkIdx) => (
-                  <Switch
-                    key={checkIdx}
-                    binNumbers={binNumbers}
-                    binIdx={binIdx}
-                    checkIdx={checkIdx}
-                    handleChange={handleChange}
-                    numbers={numbers}
-                  />
-                ))}
               </div>
               <div
                 style={{
@@ -99,20 +96,19 @@ const Address = ({ hasError, idyll, updateProps, numbers, ...props }) => {
                 }}
               >
                 {/* second four digits, aka first row of grid */}
-                {numArr.slice(4, 8).map((num, i) => {
-                  return <div key={i}>{num}</div>;
+                {numArr.slice(0, 4).map((num, checkIdx) => {
+                  return (
+                    <Bit
+                      bit={num}
+                      key={checkIdx + 4}
+                      binNumbers={binNumbers}
+                      binIdx={binIdx}
+                      checkIdx={checkIdx + 4}
+                      handleChange={handleChange}
+                      numbers={numbers}
+                    />
+                  );
                 })}
-                {/* their switches, second row of grid */}
-                {[...Array(4).keys()].map((checkIdx) => (
-                  <Switch
-                    key={checkIdx + 4}
-                    binNumbers={binNumbers}
-                    binIdx={binIdx}
-                    checkIdx={checkIdx + 4}
-                    handleChange={handleChange}
-                    numbers={numbers}
-                  />
-                ))}
               </div>
             </div>
           </div>

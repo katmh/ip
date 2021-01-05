@@ -2,8 +2,8 @@ import React from "react";
 
 const COLORS = {
   leading: "#222",
-  network: "maroon",
-  host: "navy",
+  network: "#e53535",
+  host: "#4545ef",
 };
 
 const Scrabble = ({

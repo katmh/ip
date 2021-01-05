@@ -14,13 +14,13 @@ You may have seen IP addresses before: 4 numbers separated by dots. Each number 
   [AddressExplorer numbers:`[192,168,0,0]` /]
 [/FullWidth]
 
-In theory, we have 2^32 = 4,294,967,296, over 4 billion IP addresses. But there are already over 4.66 billion people in the world who use the Internet, and many of them have multiple devices. As you might guess, we're using up all the IP addresses. Who owns them and how did we get here? What's next?
+In theory, we have [Latex]$2^{32} = 4,294,967,296$[/Latex] IP addresses — over 4 billion. But there are already over 4.66 billion people in the world who use the Internet, and many of them have multiple devices. As you might guess, we're using up all the IP addresses. Who owns them and how did we get here? What's next?
 
 ## How have IP addresses been allocated?
 
 The IP address space is managed globally by the Internet Assigned Numbers Authority (IANA), and by five regional Internet registries (RIRs) responsible in their designated territories for assignment to local Internet registries, such as Internet service providers (ISPs), and other end users.
 
-In practice, certain ranges of numbers are reserved. The example used above, 192.168.0.0, is a private, or unroutable, IP address. Not every device has a global internet IP. No entries in routing table for these addresses, so if your destination is one of these, the router will drop the packet. 
+In practice, certain ranges of numbers are reserved. The example used above, [Code]192.168.0.0[/Code], is a private, or unroutable, IP address. Not every device has a global internet IP. No entries in routing table for these addresses, so if your destination is one of these, the router will drop the packet. 
 
 Localhost is a host name that your computer understands to mean its own IP address (127.0.0.1). Your computer has what’s called a loopback network device that tells it that 127.0.0.1 == itself.
 
@@ -66,7 +66,7 @@ The anticipated shortage led to the creation of several new technologies. We men
 
 Another invervention was Classless Inter-Domain Routing (CIDR, pronounced cider), developed in 1993 in contrast to the previous, "classful" system of partitioning the IP space.
 
-In CIDR notation, IP addresses are followed by a slash and a number, which tells you how many bits at the beginning represent the network. The largest blocks of IPs given to organizations are /8 ("slash eight"). The first 8 bits, or 1 byte, represent the network, so there are 24 bits for the host — 2^24 = 16 million hosts.
+In CIDR notation, IP addresses are followed by a slash and a number, which tells you how many bits at the beginning represent the network. The largest blocks of IPs given to organizations are /8 ("slash eight"). The first 8 bits, or 1 byte, represent the network, so there are 24 bits for the host: [Latex]$2^{24}$[/Latex], or over 16 million hosts.
 
 [br /]
 [FullWidth]
@@ -74,7 +74,7 @@ In CIDR notation, IP addresses are followed by a slash and a number, which tells
 [/FullWidth]
 [br /]
 
-Those organizations then split up their IPs to give to other companies and entities. Here's a heatmap of "what the Internet looked like" in October 2007:
+## What the Internet looked like, _October 2007_
 
 [Scroller]
 

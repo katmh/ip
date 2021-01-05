@@ -170,6 +170,7 @@ input:checked + .slider:before {
 .scrabble {
   display: flex;
   justify-content: center;
+  height: 7rem;
 }
 
 .scrabble_block_set_container {
@@ -189,6 +190,7 @@ input:checked + .slider:before {
   position: absolute;
   font: 1.25rem/1 monospace;
   text-align: center;
+  margin: 0;
 }
 
 .scrabble_label {
@@ -199,7 +201,7 @@ input:checked + .slider:before {
   text-align: center;
   height: 0;
   position: relative;
-  top: -2.5rem;
+  top: -2rem;
   text-transform: uppercase;
 }
 

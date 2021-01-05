@@ -20,45 +20,13 @@ In theory, we have [Latex]$2^{32} = 4,294,967,296$[/Latex] IP addresses — over
 
 The IP address space is managed globally by the Internet Assigned Numbers Authority (IANA), and by five regional Internet registries (RIRs) responsible in their designated territories for assignment to local Internet registries, such as Internet service providers (ISPs), and other end users.
 
-In practice, certain ranges of numbers are reserved. The example used above, [Code]192.168.0.0[/Code], is a private, or unroutable, IP address. Not every device has a global internet IP. No entries in routing table for these addresses, so if your destination is one of these, the router will drop the packet. 
-
-Localhost is a host name that your computer understands to mean its own IP address (127.0.0.1). Your computer has what’s called a loopback network device that tells it that 127.0.0.1 == itself.
+In practice, certain ranges of numbers are reserved. The example used above, [Code]192.168.0.0[/Code], is a private, or unroutable, IP address. Your computer understands [Code]127.0.0.1[/Code], or localhost, to mean its own IP address.
 
 IPv4 addresses were distributed by IANA to the RIRs in blocks of approximately 16.8 million addresses each, but have been exhausted at the IANA level since January 2011. The main market forces that accelerated IPv4 address depletion included the rapidly growing number of Internet users, always-on devices, and mobile devices.
 
-IP addresses were originally divided into classes. Class A, B, and C began with different specific bits in their first octet and could accommodate different network sizes. There were also classes D (multicast) and E (reserved for future use).
-
-[var name:"state" value:0 /]
-[var name:"leading" value:`[[0],[1,0],[1,1,0]]` /]
-[var name:"networkSizes" value:`[7,14,21]` /]
-
-[Scroller currentStep:state]
-
-  [Graphic]
-    [Scrabble leading:`leading[state]` networkSize:`networkSizes[state]` /]
-  [/Graphic]
-
-  [Step]
-    ## Class A
-
-    Beginning with 0 followed by 7 digits for the rest of the network, Class A is for huge networks. They support up to 16 million hosts.
-  [/Step]
-
-  [Step]
-    ## Class B
-
-    "Used for medium and large-sized networks in enterprises and organizations. They support up to 65,000 hosts on 16,000 individual networks."
-  [/Step]
-
-  [Step]
-    ## Class C
-
-    "Most common and used in small business and home networks. These support up to 256 hosts on each of 2 million networks."
-  [/Step]
-
-[/Scroller]
-
-Class D is for multicast: special cases largely for streaming audio and video to many subscribers at once. "Class E addresses are reserved for research purposes by those responsible for Internet networking and IP address research, management, and development."
+[FullWidth]
+  [Classes /]
+[/FullWidth]
 
 Many organizations needed more IPs than Class C could provide, but didn't use nearly as many as Class B offered. This become a problem especially during the dot com boom, as droves of people and companies went online. 
 
@@ -66,7 +34,7 @@ The anticipated shortage led to the creation of several new technologies. We men
 
 Another invervention was Classless Inter-Domain Routing (CIDR, pronounced cider), developed in 1993 in contrast to the previous, "classful" system of partitioning the IP space.
 
-In CIDR notation, IP addresses are followed by a slash and a number, which tells you how many bits at the beginning represent the network. The largest blocks of IPs given to organizations are /8 ("slash eight"). The first 8 bits, or 1 byte, represent the network, so there are 24 bits for the host: [Latex]$2^{24}$[/Latex], or over 16 million hosts.
+In CIDR notation, IP addresses are followed by a slash and a number, which tells you how many bits at the beginning represent the network. The largest blocks of IPs given to organizations are [Code]/8[/Code] ("slash eight"). The first 8 bits represent the network, leaving 24 bits for the host. [Latex]$2^{24}$[/Latex] means over 16 million hosts.
 
 [br /]
 [FullWidth]

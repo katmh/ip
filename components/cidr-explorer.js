@@ -11,6 +11,7 @@ const CIDRExplorer = () => {
       style={{
         display: "flex",
         justifyContent: "center",
+        marginTop: "4rem",
       }}
     >
       <Scrabble networkSize={prefix} />

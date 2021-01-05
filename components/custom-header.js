@@ -7,7 +7,7 @@ const CustomHeader = () => {
       <h1 className="outline">How are they allocated?</h1>
       <h1>Are we running out?</h1>
       <p className="byline">
-        By Kat Huang, <i>January 2021</i>
+        By <a href="https://katmh.com/">Kat Huang</a>, <i>January 2021</i>
       </p>
     </header>
   );

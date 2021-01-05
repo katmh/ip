@@ -37,15 +37,19 @@ const Scrabble = ({
         <div
           style={{
             position: "absolute",
-            borderLeft: `2px solid ${COLORS.network}`,
+            borderLeft: `2px solid ${
+              leading.length > 0 ? COLORS.network : "transparent"
+            }`,
             height: "4rem",
             marginTop: "-3rem",
           }}
         />
-        <p className="scrabble_label">
-          Network
-          <br />({networkSizeNum} bits)
-        </p>
+        {networkSizeNum > 0 ? (
+          <p className="scrabble_label">
+            Network
+            <br />({networkSizeNum} bits)
+          </p>
+        ) : null}
         <div className="scrabble_block_set">
           {networkArray.map((i) => {
             return (

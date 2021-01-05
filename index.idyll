@@ -6,9 +6,9 @@
   [CustomHeader /]
 [/FullWidth]
 
-Every device on the Internet has a address. Similar to the way your street address has a street name and building number, an IP address is made of a network and host. Hosts, like computers or printers, are part of a group of devices that communicate with one another.
+Every device on the Internet has a address. Similar to the way your [Color color:"#444"]street address[/Color] has a [Color color:"maroon"]street name[/Color] and [Color color:"navy"]building number[/Color], an [Color color:"#444"]IP address[/Color] is made of a [Color color:"maroon"]network[/Color] and [Color color:"navy"]host[/Color]. Hosts, like computers or printers, are part of a group of devices that communicate with one another.
 
-You may have seen IP addresses before: 4 numbers separated by dots. Each number (in decimal, human-friendly form) represents 8 bits, or binary digits: 0s and 1s.
+You may have seen IP addresses before: 4 numbers separated by dots. Each number represents 8 bits, or binary digits: [Code]0[/Code]s and [Code]1[/Code]s.
 
 [FullWidth]
   [AddressExplorer numbers:`[192,168,0,0]` /]
@@ -16,9 +16,7 @@ You may have seen IP addresses before: 4 numbers separated by dots. Each number 
 
 In theory, we have [Latex]$2^{32} = 4,294,967,296$[/Latex] IP addresses — over 4 billion. But there are already over 4.66 billion people in the world who use the Internet, and many of them have multiple devices. As you might guess, we're using up all the IP addresses. Who owns them and how did we get here? What's next?
 
-## How have IP addresses been allocated?
-
-The IP address space is managed globally by the Internet Assigned Numbers Authority (IANA), and by five regional Internet registries (RIRs) responsible in their designated territories for assignment to local Internet registries, such as Internet service providers (ISPs), and other end users.
+The IP address space is managed globally by the [Internet Assigned Numbers Authority (IANA)](https://en.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority), and by five regional Internet registries (RIRs) responsible in their designated territories for assignment to local Internet registries, such as Internet service providers (ISPs), and other end users.
 
 In practice, certain ranges of numbers are reserved. The example used above, [Code]192.168.0.0[/Code], is a private, or unroutable, IP address. Your computer understands [Code]127.0.0.1[/Code], or localhost, to mean its own IP address.
 
@@ -32,9 +30,7 @@ Many organizations needed more IPs than Class C could provide, but didn't use ne
 
 The anticipated shortage led to the creation of several new technologies. We mentioned network address translation (NAT) above, where multiple private addresses are placed under one public address. For example, at home you probably have 1 public IP address that the internet sees you as, which is the one assigned by the ISP to our router.
 
-Another invervention was Classless Inter-Domain Routing (CIDR, pronounced cider), developed in 1993 in contrast to the previous, "classful" system of partitioning the IP space.
-
-In CIDR notation, IP addresses are followed by a slash and a number, which tells you how many bits at the beginning represent the network. The largest blocks of IPs given to organizations are [Code]/8[/Code] ("slash eight"). The first 8 bits represent the network, leaving 24 bits for the host. [Latex]$2^{24}$[/Latex] means over 16 million hosts.
+In 1993, they developed Classless Inter-Domain Routing (CIDR, pronounced cider) in contrast to the previous, "classful" system. In CIDR notation, IP addresses are followed by a slash and a number, which tells you how many bits at the beginning represent the network. The largest blocks of IPs given to organizations are [Code]/8[/Code] ("slash eight"). The first 8 bits represent the network, leaving 24 bits for the host. [Latex]$2^{24}$[/Latex] means over 16 million hosts.
 
 [br /]
 [FullWidth]
@@ -63,8 +59,6 @@ In CIDR notation, IP addresses are followed by a slash and a number, which tells
   [/Step]
 
 [/Scroller]
-
-[br /]
 
 ## A legacy abundance of IPs
 

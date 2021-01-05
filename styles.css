@@ -22,10 +22,16 @@ header {
 }
 
 header h1 {
-  font: 800 3.5rem/1 system-ui;
+  font: 900 3.5rem/1 Inconsolata, monospace;
   letter-spacing: -1px;
   color: #2c2a24;
-  margin: 1rem 0;
+  margin: 0;
+}
+
+header h1:nth-of-type(2n) {
+  -webkit-text-stroke: #2c2a24;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-fill-color: transparent;
 }
 
 .byline {
@@ -39,28 +45,25 @@ h2 {
   font-weight: 800;
 }
 
-.idyll-scroll .idyll-text-container {
-  max-width: 50vw;
+.idyll-scroll {
+  margin-top: 0 !important;
 }
-.idyll-scroll-text .idyll-step {
-  max-width: 45vw;
-}
-@media only screen and (max-width: 600px) {
-  .idyll-scroll .idyll-text-container {
-    max-width: 57vw;
-  }
-  .idyll-scroll-text .idyll-step {
-    max-width: 57vw;
-  }
-}
-
 .idyll-step {
   padding: 1rem !important;
+}
+.idyll-scroll-text,
+.idyll-step {
+  margin: 0 0 50vh !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+.idyll-scroll-text {
+  padding: 0 0 10vh !important;
 }
 
 .address_container {
   color: #eee;
-  font-family: monospace;
+  font-family: Inconsolata, monospace;
   text-align: center;
   margin: 4rem auto;
   background: #222;
@@ -71,6 +74,7 @@ h2 {
   margin: 1rem 0;
   font-size: 2rem;
   font-weight: bold;
+  font-family: Inconsolata, monospace;
 }
 
 .address span:after {
@@ -82,9 +86,8 @@ h2 {
 }
 
 .binary_address {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
   font-size: 1.25rem;
   margin-bottom: 2rem;
 }
@@ -108,6 +111,7 @@ h2 {
   opacity: 0;
   width: 0;
   height: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* The slider */
@@ -154,8 +158,16 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+.power_of_two {
+  position: absolute;
+  margin-top: 60px;
+  margin-left: -22px;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
 .big_address {
-  font-family: monospace;
+  font-family: Inconsolata, monospace;
   font-size: 2rem;
 }
 
@@ -188,7 +200,7 @@ input:checked + .slider:before {
 
 .bit {
   position: absolute;
-  font: 1.25rem/1 monospace;
+  font: 1.25rem/1 Inconsolata, monospace;
   text-align: center;
   margin: 0;
 }
@@ -225,4 +237,9 @@ input:checked + .slider:before {
   padding: 0.25rem 0.3rem;
   margin: 0;
   vertical-align: bottom;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
 }

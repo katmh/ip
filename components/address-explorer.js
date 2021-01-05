@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { dec2binArray, bin2dec } from "./helpers";
+import Color from "./color";
 
 const Switch = ({ binNumbers, binIdx, checkIdx, handleChange, numbers }) => {
   return (
@@ -39,7 +40,11 @@ const Address = ({ hasError, idyll, updateProps, numbers, ...props }) => {
           const decNum = bin2dec(binNum.join(""));
           return (
             <span key={i} className="number">
-              {decNum}
+              {i == 0 || i == 1 ? (
+                <Color color="#ff8080">{decNum}</Color>
+              ) : (
+                <Color color="#8080ff">{decNum}</Color>
+              )}
             </span>
           );
         })}

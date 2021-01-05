@@ -58,7 +58,7 @@ The creators of the Internet anticipated the IP shortage. They developed network
 
 [/Scroller]
 
-## A legacy abundance of IPs
+## An abundance of IPs
 
 As one of the early pioneers of the Internet, the Massachusetts Institute of Technology, among other schools, received a huge chunk of IP addresses back in the day.
 
@@ -72,8 +72,4 @@ As one of the early pioneers of the Internet, the Massachusetts Institute of Tec
 
 CIDR has worked well, but we have IPv6
 
-[FullWidth]
-  [IPSpace /]
-[/FullWidth]
-
-And now we wait!
+Summary

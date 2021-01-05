@@ -6,7 +6,9 @@ const Classes = () => {
     <section
       style={{
         margin: "4rem auto",
+        padding: "2rem",
       }}
+      className="cyan_texture"
     >
       <div className="class_row">
         <div className="class_info">

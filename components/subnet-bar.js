@@ -7,8 +7,8 @@ const SubnetBar = ({ setBldg, ...props }) => {
 
   // list of numbers in 18.18.xx.0
   props.data = subnets;
-
-  const width = Math.max(...subnets.map((arr) => arr[1])) * 16 + 16;
+  const barWidth = 4;
+  const width = Math.max(...subnets.map((arr) => arr[1])) * barWidth + barWidth;
 
   useEffect(() => {
     if (props.data && d3Container.current) {
@@ -22,8 +22,8 @@ const SubnetBar = ({ setBldg, ...props }) => {
         .enter()
         .append("rect")
         .attr("height", 30)
-        .attr("width", 16)
-        .attr("x", (d) => d[1] * 16)
+        .attr("width", barWidth)
+        .attr("x", (d) => d[1] * barWidth)
         .attr("fill", "navy")
         .attr("class", "subnet");
 

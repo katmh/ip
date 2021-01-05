@@ -1,5 +1,6 @@
 import React from "react";
 import Scrabble from "./scrabble";
+import data from "../data/classes";
 
 const Classes = () => {
   return (
@@ -10,60 +11,22 @@ const Classes = () => {
       }}
       className="cyan_texture"
     >
-      <div className="class_row">
-        <div className="class_info">
-          <h4>Class A</h4>
-          <p>
-            Many organizations needed more IPs than Class C could provide, but
-            didn’t use nearly as many as Class B offered.
-          </p>
-        </div>
-        <Scrabble leading={[0]} networkSize={7} />
-      </div>
-
-      <div className="class_row">
-        <div className="class_info">
-          <h4>Class B</h4>
-          <p>
-            Many organizations needed more IPs than Class C could provide, but
-            didn’t use nearly as many as Class B offered.
-          </p>
-        </div>
-        <Scrabble leading={[1, 0]} networkSize={14} />
-      </div>
-
-      <div className="class_row">
-        <div className="class_info">
-          <h4>Class C</h4>
-          <p>
-            Many organizations needed more IPs than Class C could provide, but
-            didn’t use nearly as many as Class B offered.
-          </p>
-        </div>
-        <Scrabble leading={[1, 1, 0]} networkSize={21} />
-      </div>
-
-      <div className="class_row">
-        <div className="class_info">
-          <h4>Class D</h4>
-          <p>
-            Many organizations needed more IPs than Class C could provide, but
-            didn’t use nearly as many as Class B offered.
-          </p>
-        </div>
-        <Scrabble leading={[1, 1, 1, 0]} networkSize={0} />
-      </div>
-
-      <div className="class_row">
-        <div className="class_info">
-          <h4>Class E</h4>
-          <p>
-            Many organizations needed more IPs than Class C could provide, but
-            didn’t use nearly as many as Class B offered.
-          </p>
-        </div>
-        <Scrabble leading={[1, 1, 1, 1]} networkSize={0} />
-      </div>
+      <h3>Classful Networking</h3>
+      <p className="description">
+        From 1981 to 1993, IP addresses were divided into five classes. Each
+        began with different bits and could support different size networks.
+      </p>
+      {data.map((d) => {
+        return (
+          <div className="class_row" key={d.name}>
+            <div className="class_info">
+              <h4>Class {d.name}</h4>
+              <p dangerouslySetInnerHTML={{ __html: d.description }} />
+            </div>
+            <Scrabble leading={d.leading} networkSize={d.networkSize} />
+          </div>
+        );
+      })}
     </section>
   );
 };

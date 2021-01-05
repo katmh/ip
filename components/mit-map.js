@@ -51,7 +51,7 @@ const MITMap = () => {
   return (
     <div
       ref={(el) => (mapContainer.current = el)}
-      style={{ height: "60vh", width: "100%" }}
+      style={{ height: "60vh", transform: "scale(.75)" }}
     />
   );
 };

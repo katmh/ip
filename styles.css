@@ -88,8 +88,24 @@ h2 {
 .address {
   margin: 0;
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: 900;
   font-family: Inconsolata, monospace;
+}
+
+h3 {
+  text-align: center;
+  font: 900 2.25rem/1 Inconsolata, monospace;
+  color: #333;
+}
+.description {
+  text-align: center;
+  margin: 0.5rem auto;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #444;
+  width: 90%;
+  max-width: 900px;
+  margin-bottom: 1rem;
 }
 
 .address span:after {
@@ -216,8 +232,14 @@ input:checked + .slider:before {
 
 .class_info {
   margin-right: 2rem;
+  margin-top: 2rem;
   color: #444;
-  max-width: 20rem;
+  width: 20rem;
+}
+@media (max-width: 1050px) {
+  .class_info {
+    width: 100%;
+  }
 }
 
 .class_info h4 {
@@ -244,7 +266,7 @@ input:checked + .slider:before {
 .scrabble_block {
   display: inline-block;
   height: 25px;
-  width: 15px;
+  width: 1.5vw;
   margin: 0 2.5px;
   border-bottom-width: 5px;
   border-bottom-style: solid;
@@ -294,4 +316,18 @@ input:checked + .slider:before {
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   opacity: 1;
+}
+
+.summary {
+  background: #f2dba2;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 800px;
+  margin: 1rem auto;
+}
+
+.summary li {
+  font: normal 1.3rem/1.7 system-ui;
+  margin: 0.5rem 0;
 }

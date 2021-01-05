@@ -10,7 +10,7 @@ const MapContainer = () => {
   return (
     <div
       style={{
-        padding: "0 5%",
+        overflow: "hidden",
       }}
     >
       <Overlay bldg={bldg} name="tmp" bldgnum="tmp" ip="11" />

@@ -6,7 +6,7 @@
   [CustomHeader /]
 [/FullWidth]
 
-Every device on the Internet has a address. Similar to the way your [Color color:"#444"]street address[/Color] has a [Color color:"maroon"]street name[/Color] and [Color color:"navy"]building number[/Color], an [Color color:"#444"]IP address[/Color] is made of a [Color color:"maroon"]network[/Color] and [Color color:"navy"]host[/Color]. Hosts, like computers or printers, are part of a group of devices that communicate with one another.
+Every device on the Internet has a address. An [Color color:"#444"]IP address[/Color] is like a [Color color:"#444"]P.O. box[/Color]. It's located within a [Color color:"maroon"]post office (the network)[/Color] and directs incoming and outgoing messages to a [Color color:"navy"]person (the host)[/Color]. Hosts, like computers or printers, are part of a group of devices that communicate with one another.
 
 You may have seen IP addresses before: 4 numbers separated by dots. Each number represents 8 bits, or binary digits: [Code]0[/Code]s and [Code]1[/Code]s.
 
@@ -14,13 +14,9 @@ You may have seen IP addresses before: 4 numbers separated by dots. Each number 
   [AddressExplorer numbers:`[192,168,0,0]` /]
 [/FullWidth]
 
-In theory, we have [Latex]$2^{32} = 4,294,967,296$[/Latex] IP addresses — over 4 billion. But there are already over 4.66 billion people in the world who use the Internet, and many of them have multiple devices. As you might guess, we're using up all the IP addresses. Who owns them and how did we get here? What's next?
+In theory, we have [Latex]$2^{32} = 4,294,967,296$[/Latex] IP addresses — over 4 billion. But there are already over 4.66 billion people in the world who use the Internet, and many of them have multiple devices. As you might guess, we're using up all the IP addresses — at least for this protocol, known as IPv4.
 
-The IP address space is managed globally by the [Internet Assigned Numbers Authority (IANA)](https://en.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority), and by five regional Internet registries (RIRs) responsible in their designated territories for assignment to local Internet registries, such as Internet service providers (ISPs), and other end users.
-
-In practice, certain ranges of numbers are reserved. The example used above, [Code]192.168.0.0[/Code], is a private, or unroutable, IP address. Your computer understands [Code]127.0.0.1[/Code], or localhost, to mean its own IP address.
-
-IPv4 addresses were distributed by IANA to the RIRs in blocks of approximately 16.8 million addresses each, but have been exhausted at the IANA level since January 2011. The main market forces that accelerated IPv4 address depletion included the rapidly growing number of Internet users, always-on devices, and mobile devices.
+In practice, certain ranges of IP addresses are reserved. The example used above, [Code]192.168.0.0[/Code], is a private, or unroutable, IP address. Many devices in a home, for example, each have a private address but are all under one public address. Your computer also understands [Code]127.0.0.1[/Code], or localhost, to mean its own IP address.
 
 [FullWidth]
   [Classes /]
@@ -36,7 +32,7 @@ The creators of the Internet anticipated the IP shortage. They developed network
 [/FullWidth]
 [br /]
 
-## What the Internet looked like, _October 2007_
+### What the Internet looked like, _October 2007_
 
 [Scroller]
 
@@ -45,31 +41,36 @@ The creators of the Internet anticipated the IP shortage. They developed network
   [/Graphic]
 
   [Step]
-    "Each pixel in the full-size image represents a single /24 network containing up to 256 hosts. The color of each pixel corresponds to the Regional Internet Registries where the address space is listed."
-  [/Step]
+    Globally, an organization called the [Internet Assigned Numbers Authority (IANA)](https://en.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority) manages the IP address space. Five regional Internet registries (RIRs) assign addresses to local Internet registries, such as Internet service providers (ISPs), in their territories.
 
-  [Step]
-    "Areas are shaded with varying levels of transparency. Larger blocks of address space are more transparent, which also makes them darker. Thus, varying shades of a color indicate different-sized blocks of addresses appearing in the whois data."
-  [/Step]
+    From the Center for Applied Internet Data Analysis: "Each pixel in the full-size image represents a single /24 network containing up to 256 hosts. The color of each pixel corresponds to the Regional Internet Registries where the address space is listed."
 
-  [Step]
-    Owners include various registries, the US Department of Defense, and telecom companies.
+    Owners include various registries, the US Department of Defense, and corporate entities. Some ranges are also reserved.
   [/Step]
 
 [/Scroller]
 
-## An abundance of IPs
+[br /]
+[br /]
 
-As one of the early pioneers of the Internet, the Massachusetts Institute of Technology, among other schools, received a huge chunk of IP addresses back in the day.
+### The present and future of IPs
 
-[Aside]
-  [MapContainer /]
-[/Aside]
+Many of the early pioneers of the Internet, such as universities, received huge chunks of IP addresses. Recently, as we've neared IP exhaustion, some organizations have sold their excess IPs. In 2017, MIT sold 8 million coveted IP addresses to Amazon for $200 million.
+
+As of 2019, all IPv4 addresses have been allocated. A quarter of the Internet has slowly migrated to a new protocol called IPv6. There are [Latex]$2^{128}$[/Latex] IPv6 addresses, or 340 trillion trillion trillion. Here's what an IPv6 address look like: [Code]2001:0db8:85a3::8a2e:0370:7334[/Code].
 
 [br /]
 
-## What do we do since we're running out?
+[FullWidth]
+[Summary]
 
-CIDR has worked well, but we have IPv6
+### Summary
+- IP addresses are unique numbers that allow devices to communicate with others on the Internet. Each number in an IPv4 address represents 8 bits, or binary digits.
+- IP addresses contain a network and host. Originally, there were five classes of addresses, with different leading bits and network sizes. Class A allowed for the largest networks, followed by classes B and C.
+- We've anticipated exhaustion of IP addresses. NAT, which puts multiple private IPs behind one public IP, has helped delay that.
+- So has CIDR. In CIDR notation, the number after the slash following an IP address indicates how many leading bits are used to determine the network. Registries can give out, for example, [Code]/29[/Code] blocks if that's all an organization needs.
+- As of 2019, all IPv4 addresses have been allocated — reserved, given to companies, held by the US Department of Defense and regional registries, or otherwise.
+- We're slowly migrating over to IPv6!
 
-Summary
+[/Summary]
+[/FullWidth]

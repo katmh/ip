@@ -2,30 +2,19 @@
 
 [SEO /]
 
-[Header
-  fullWidth:true
-  title:"IP Addresses"
-  subtitle:"What is an IP address? How have they been allocated? What do we do since we're running out?"
-  author:"Kat Huang"
-  authorLink:"https://katmh.com"
-  date:`(new Date()).toDateString()`
-  background:"#222222"
-  color:"#ffffff"
-   /]
+[FullWidth]
+  [CustomHeader /]
+[/FullWidth]
 
-## What is an IP address?
+Every device on the Internet has a address. Similar to the way your street address has a street name and building number, an IP address is made of a network and host. Hosts, like computers or printers, are part of a group of devices that communicate with one another.
 
-Every device on the Internet has an address. Like your street address is made of your street and your building number, an IP address is made of a network and a host, which is a device, like a computer or printer, on the network.
+You may have seen IP addresses before: 4 numbers separated by dots. Each number (in decimal, human-friendly form) represents 8 bits, or binary digits: 0s and 1s.
 
-You may have seen your IP address before: 4 numbers separated by dots. Each number (in decimal, human-friendly form) represents 8 bits, or binary digits: 0s and 1s.
+[FullWidth]
+  [AddressExplorer numbers:`[192,168,0,0]` /]
+[/FullWidth]
 
-[AddressExplorer numbers:`[192,168,0,0]` /]
-
-Each of the four numbers in an IP address ranges from 0 (0000 0000 in binary) to 255 (1111 1111 in binary.) Toggle the switches to get new numbers and see how binary and decimal forms relate.
-
-In theory, we have 2^32 = 4,294,967,296, over 4 billion IP addresses. But there are over 4.66 billion people in the world who use the Internet, and many of them have multiple devices.
-
-As you might guess, we're using up all the IP addresses. Who owns them and how did we get here? What's next?
+In theory, we have 2^32 = 4,294,967,296, over 4 billion IP addresses. But there are already over 4.66 billion people in the world who use the Internet, and many of them have multiple devices. As you might guess, we're using up all the IP addresses. Who owns them and how did we get here? What's next?
 
 ## How have IP addresses been allocated?
 

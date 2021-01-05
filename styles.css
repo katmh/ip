@@ -2,6 +2,37 @@ body {
   overflow-x: hidden !important;
 }
 
+p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #333;
+  margin: 1.5rem 0;
+}
+
+header {
+  padding: 5rem 10% 4rem;
+  background: #a5eae7;
+  margin-bottom: 4rem;
+}
+
+header h1 {
+  font: 800 3.5rem/1 system-ui;
+  letter-spacing: -1px;
+  color: #2c2a24;
+  margin: 1rem 0;
+}
+
+.byline {
+  margin-top: 2rem;
+  color: #555;
+}
+
+h2 {
+  margin-top: 4rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
 .idyll-scroll .idyll-text-container {
   max-width: 50vw;
 }
@@ -22,10 +53,14 @@ body {
 }
 
 .address_container {
-  color: #554a46;
+  color: #eee;
   font-family: monospace;
   text-align: center;
+  margin: 4rem auto;
+  background: #222;
+  padding: 2rem 5%;
 }
+
 .address {
   margin: 1rem 0;
   font-size: 2rem;

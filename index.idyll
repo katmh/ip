@@ -28,9 +28,7 @@ IPv4 addresses were distributed by IANA to the RIRs in blocks of approximately 1
 
 Many organizations needed more IPs than Class C could provide, but didn't use nearly as many as Class B offered. This become a problem especially during the dot com boom, as droves of people and companies went online. 
 
-The anticipated shortage led to the creation of several new technologies. We mentioned network address translation (NAT) above, where multiple private addresses are placed under one public address. For example, at home you probably have 1 public IP address that the internet sees you as, which is the one assigned by the ISP to our router.
-
-In 1993, they developed Classless Inter-Domain Routing (CIDR, pronounced cider) in contrast to the previous, "classful" system. In CIDR notation, IP addresses are followed by a slash and a number, which tells you how many bits at the beginning represent the network. The largest blocks of IPs given to organizations are [Code]/8[/Code] ("slash eight"). The first 8 bits represent the network, leaving 24 bits for the host. [Latex]$2^{24}$[/Latex] means over 16 million hosts.
+The creators of the Internet anticipated the IP shortage. They developed network address translation (NAT), where multiple private addresses are placed under one public address. In 1993, they developed Classless Inter-Domain Routing (CIDR, pronounced cider), a less wasteful and more flexible system than the previous class-based one.
 
 [br /]
 [FullWidth]

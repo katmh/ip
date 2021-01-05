@@ -17,7 +17,7 @@ p {
 
 header {
   padding: 5rem 10% 4rem;
-  background: #a5eae7;
+  background: #baefed;
   margin-bottom: 4rem;
 }
 
@@ -37,6 +37,7 @@ header h1:nth-of-type(2n) {
 .byline {
   margin-top: 2rem;
   color: #555;
+  margin-bottom: 0;
 }
 
 h2 {
@@ -83,6 +84,9 @@ h2 {
 }
 .address span:last-of-type:after {
   content: "";
+}
+.cidr .number {
+  opacity: 0.75;
 }
 
 .binary_address {
@@ -179,10 +183,34 @@ input:checked + .slider:before {
   color: navy;
 }
 
+.class_row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.class_info {
+  margin-right: 2rem;
+  color: #444;
+  max-width: 20rem;
+}
+
+.class_info h4 {
+  font-size: 1.15rem;
+  margin: 0 0 0.25rem;
+}
+
+.class_info p {
+  margin: 0.25rem 0;
+  font-size: 1rem;
+}
+
 .scrabble {
   display: flex;
   justify-content: center;
-  height: 7rem;
+  height: 3rem;
+  margin-top: 4rem;
 }
 
 .scrabble_block_set_container {

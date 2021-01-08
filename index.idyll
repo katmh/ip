@@ -1,4 +1,4 @@
-[meta title:"IP Addresses" description:"Short description of your project" /]
+[meta title:"Out of IPs" description:"What's an IP address? How are they allocated? Are we running out? An interactive explainer by Kat Huang." /]
 
 [SEO /]
 
@@ -62,6 +62,9 @@ As of 2019, all IPv4 addresses have been allocated. A quarter of the Internet ha
 [br /]
 
 [FullWidth]
+
+[MapContainer /]
+
 [Summary]
 
 ### Summary

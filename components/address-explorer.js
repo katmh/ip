@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { dec2binArray, bin2dec } from "./helpers";
 import Color from "./color";
 
-const Bit = ({ bit, binNumbers, binIdx, checkIdx, handleChange, numbers }) => {
+const Bit = ({ binNumbers, binIdx, checkIdx, handleChange }) => {
   return (
     <div>
-      <div>{bit}</div>
+      <div>{binNumbers[binIdx][checkIdx].toString().charAt()}</div>
       <label className="switch">
         <input
           type="checkbox"
@@ -75,11 +75,10 @@ const Address = ({ hasError, idyll, updateProps, numbers, ...props }) => {
                 }}
               >
                 {/* first four digits, aka first row of grid */}
-                {numArr.slice(0, 4).map((num, checkIdx) => {
+                {numArr.slice(0, 4).map((_, checkIdx) => {
                   return (
                     <Bit
                       key={checkIdx}
-                      bit={num}
                       binNumbers={binNumbers}
                       binIdx={binIdx}
                       checkIdx={checkIdx}
@@ -96,10 +95,9 @@ const Address = ({ hasError, idyll, updateProps, numbers, ...props }) => {
                 }}
               >
                 {/* second four digits, aka first row of grid */}
-                {numArr.slice(0, 4).map((num, checkIdx) => {
+                {numArr.slice(0, 4).map((_, checkIdx) => {
                   return (
                     <Bit
-                      bit={num}
                       key={checkIdx + 4}
                       binNumbers={binNumbers}
                       binIdx={binIdx}

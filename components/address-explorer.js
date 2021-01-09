@@ -14,7 +14,13 @@ const Bit = ({ binNumbers, binIdx, checkIdx, handleChange }) => {
         marginRight: `${checkIdx == 3 ? 1 : 0}rem`,
       }}
     >
-      <Color color={binIdx < 2 ? red : blue}>{bit}</Color>
+      <span
+        style={{
+          display: "block",
+        }}
+      >
+        <Color color={binIdx < 2 ? red : blue}>{bit}</Color>
+      </span>
       <label className="switch">
         <input
           type="checkbox"

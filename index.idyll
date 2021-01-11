@@ -6,7 +6,7 @@
   [CustomHeader /]
 [/FullWidth]
 
-Every device on the Internet has a address. An [Color color:"#444"]IP address[/Color] is like a [Color color:"#444"]P.O. box[/Color]. It's located within a [Color color:"maroon"]post office (the network)[/Color] and directs incoming and outgoing messages to a [Color color:"navy"]person (the host)[/Color]. Hosts, like computers or printers, are part of a group of devices that communicate with one another.
+Every device on the Internet has an address. An [Color color:"#444"]IP address[/Color] is like a [Color color:"#444"]P.O. box[/Color]. It's located within a [Color color:"maroon"]post office (the network)[/Color] and directs incoming and outgoing messages to a [Color color:"navy"]person (the host)[/Color]. Hosts, like computers or printers, are part of a group of devices that communicate with one another.
 
 You may have seen IP addresses before: 4 numbers separated by dots. Each number represents 8 bits, or binary digits: [Code]0[/Code]s and [Code]1[/Code]s.
 
